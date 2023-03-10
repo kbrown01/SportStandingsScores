@@ -28,7 +28,7 @@ Across the top it uses tabs to allow selection of what you want to see:
 
 ## Prerequisites
 
-As for the GUI, there are of course some standard cards like horizontal-stack and vertical-stack. But there are also several custom cards used. These include:
+As for the GUI, there are several custom cards used. These include:
 
 - [Teamtracker](https://github.com/vasqued2/ha-teamtracker)
 - [Flex-Table](https://github.com/custom-cards/flex-table-card)
@@ -38,6 +38,7 @@ As for the GUI, there are of course some standard cards like horizontal-stack an
 - [Stack-in](https://github.com/custom-cards/stack-in-card)
 - [Decluttering](https://github.com/custom-cards/decluttering-card)
 
+You also would need the Teamtracker integration for the game-based statistics.
 If you want the solution to work as is, you will need to be sure you have these installed and working in your Lovelace configuration.
 
 ## Sensors
@@ -45,7 +46,7 @@ If you want the solution to work as is, you will need to be sure you have these 
 There are several sensors. 
 The main sensors can be broken down into two types.
 The first is a single sensor for every sport that uses REST. 
-These are in the Git sensr.yaml file.
+These are in the GITHUB sensor.yaml file.
 One example is:
 
 
@@ -62,9 +63,14 @@ One example is:
   json_attributes:
       - children
 ```
+In these REST sensors, it gets the data from the ESPN API using:
 
-The other sensors in sensor.yaml are all teamtracker sensors for every team in all our sports.
-A short example is like this:
+- seasontype = 2 (regular season)
+- type = 0 (full stats)
+- level = 3 (full/conference/division)
+
+The other sensors in sensor.yaml are all teamtracker sensors for every team in all the sports.
+A short (snipped) example is like this:
 
 ```
 ##
@@ -96,12 +102,15 @@ A short example is like this:
   name: Miami Dolphins
 ```
 
-As a side note, I makde these not by typing in every team. I use a tool to go JSON to XML.
+The sensor.yaml attached has teamtracker sensors to every team in all those sports.
+
+As a side note, I made these but I not type in every team. I use a tool to go JSON to XML using the JSON output from the standings file.
 The repository includes an XSL that can build the set based on the sensor for a sport.
+And yes, I used XML and XSL ... because that is what I am familar with and this is a one off.
 
 In order to get standings for all the divisions, I implemented template sensors for all of them.
-These are included in template.yaml in Git.
-A short sample is like this:
+These are included in template.yaml in GITHUB.
+A short sample is like this for the NHL:
 
 
 ```
@@ -133,10 +142,11 @@ A short sample is like this:
 ## The Dashboard
 
 The complete dashboard is contained in dashboard.yaml. 
-You can examine that if and make changes you may want.
+You can examine that and make changes you may want.
 It makes extensive use of decluttering to templatize things and make it easier and much shorter to write.
+I think I could go deeper here, but for now it has one template per sport (as the columns are different) and one for game stats.
 It uses flex-table to show standings. 
 There is a help_template in a .txt file that can help you identify the fields that contain the columns you wish to show in standings.
 
 There are a few nice things done with card-mod to implement nicer tabs, colorize active tabs and provide scrolling tables horizontally on smaller displays.
-
+Although I will say that I designed this for wall pads in the house with large screens, I would likely change things if I ever implemented it to target phone devices.
