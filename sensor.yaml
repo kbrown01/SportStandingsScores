@@ -1,0 +1,553 @@
+##
+## NFL Standings
+##
+- platform: rest
+  scan_interval: 36000
+  name: NFL Standings
+  unique_id: sensor.nfl_standings
+  resource: https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?seasontype=2&type=0&level=3
+  value_template: "{{ now() }}"
+  json_attributes:
+      - children
+##
+## NHL Standings
+##
+- platform: rest
+  scan_interval: 36000
+  name: NHL Standings
+  unique_id: sensor.nhl_standings
+  resource: https://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?seasontype=2&type=0&level=3
+  value_template: "{{ now() }}"
+  json_attributes:
+      - children
+##
+## MLB Standings
+##
+- platform: rest
+  scan_interval: 36000
+  name: MLB Standings
+  unique_id: sensor.mlb_standings
+  resource: https://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?seasontype=2&type=0&level=3
+  value_template: "{{ now() }}"
+  json_attributes:
+      - children
+##
+## NBA Standings
+##
+- platform: rest
+  scan_interval: 36000
+  name: NBA Standings
+  unique_id: sensor.nba_standings
+  resource: https://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?seasontype=2&type=0&level=3
+  value_template: "{{ now() }}"
+  json_attributes:
+      - children
+
+##
+##  NFL Teams
+##
+- platform: teamtracker
+  league_id: NFL
+  team_id: DET
+  name: Detroit Lions
+- platform: teamtracker
+  league_id: NFL
+  team_id: GB
+  name: Green Bay
+- platform: teamtracker
+  league_id: NFL
+  team_id: CHI
+  name: Chicago Bears
+- platform: teamtracker
+  league_id: NFL
+  team_id: MIN
+  name: Minnesota Vikings
+- platform: teamtracker
+  league_id: NFL
+  team_id: BUF
+  name: Buffalo Bills
+- platform: teamtracker
+  league_id: NFL
+  team_id: MIA
+  name: Miami Dolphins
+- platform: teamtracker
+  league_id: NFL
+  team_id: NE
+  name: New England Patriots
+- platform: teamtracker
+  league_id: NFL
+  team_id: NYJ
+  name: New York Jets
+- platform: teamtracker
+  league_id: NFL
+  team_id: DAL
+  name: Dallas Cowboys
+- platform: teamtracker
+  league_id: NFL
+  team_id: NYG
+  name: New York Giants
+- platform: teamtracker
+  league_id: NFL
+  team_id: PHI
+  name: Philadelphia Eagles
+- platform: teamtracker
+  league_id: NFL
+  team_id: WSH
+  name: Washington Commanders
+- platform: teamtracker
+  league_id: NFL
+  team_id: BAL
+  name: Baltimore Ravens
+- platform: teamtracker
+  league_id: NFL
+  team_id: CIN
+  name: Cincinnati Bengals
+- platform: teamtracker
+  league_id: NFL
+  team_id: CLE
+  name: Cleveland Browns
+- platform: teamtracker
+  league_id: NFL
+  team_id: PIT
+  name: Pittsburg Steelers
+- platform: teamtracker
+  league_id: NFL
+  team_id: HOU
+  name: Houston Texans
+- platform: teamtracker
+  league_id: NFL
+  team_id: IND
+  name: Indianapolis Colts
+- platform: teamtracker
+  league_id: NFL
+  team_id: JAX
+  name: Jacksonville Jaguars
+- platform: teamtracker
+  league_id: NFL
+  team_id: TEN
+  name: Tennessee Titans
+- platform: teamtracker
+  league_id: NFL
+  team_id: ATL
+  name: Atlanta Falcons
+- platform: teamtracker
+  league_id: NFL
+  team_id: CAR
+  name: Carolina Panthers
+- platform: teamtracker
+  league_id: NFL
+  team_id: "NO"
+  name: New Orleans Saints
+- platform: teamtracker
+  league_id: NFL
+  team_id: TB
+  name: Tampa Bay Buccaneers
+- platform: teamtracker
+  league_id: NFL
+  team_id: DEN
+  name: Denver Broncos
+- platform: teamtracker
+  league_id: NFL
+  team_id: KC
+  name: Kansas City Chiefs
+- platform: teamtracker
+  league_id: NFL
+  team_id: LV
+  name: Las Vegas Raiders
+- platform: teamtracker
+  league_id: NFL
+  team_id: LAC
+  name: Los Angeles Chargers
+- platform: teamtracker
+  league_id: NFL
+  team_id: ARI
+  name: Arizona Cardinals
+- platform: teamtracker
+  league_id: NFL
+  team_id: LAR
+  name: Los Angeles Rams
+- platform: teamtracker
+  league_id: NFL
+  team_id: SF
+  name: "San Francisco 49ers"
+- platform: teamtracker
+  league_id: NFL
+  team_id: SE
+  name: Seattle Seahawks
+##
+##  NHL Teams
+##
+- platform: teamtracker
+  league_id: NHL
+  team_id: DET
+  name: Detroit Red Wings
+- platform: teamtracker
+  league_id: NHL
+  team_id: NSH
+  name: Nashville Predators
+- platform: teamtracker
+  league_id: NHL
+  team_id: FLA
+  name: Florida Panthers
+- platform: teamtracker
+  league_id: NHL
+  team_id: STL
+  name: St Louis Blues
+- platform: teamtracker
+  league_id: NHL
+  team_id: COL
+  name: Colorado Avalanche
+- platform: teamtracker
+  league_id: NHL
+  team_id: BOS
+  name: Boston Bruins
+- platform: teamtracker
+  league_id: NHL
+  team_id: NYI
+  name: New York Islanders
+- platform: teamtracker
+  league_id: NHL
+  team_id: PIT
+  name: Pittsburg Penguins
+- platform: teamtracker
+  league_id: NHL
+  team_id: NJ
+  name: New Jersey Devils
+- platform: teamtracker
+  league_id: NHL
+  team_id: DAL
+  name: Dallas Stars
+- platform: teamtracker
+  league_id: NHL
+  team_id: CBJ
+  name: Columbus Blue Jackets
+- platform: teamtracker
+  league_id: NHL
+  team_id: TOR
+  name: Toronto Maple Leafs
+- platform: teamtracker
+  league_id: NHL
+  team_id: MTL
+  name: Montreal Canadians
+- platform: teamtracker
+  league_id: NHL
+  team_id: CAR
+  name: Carolina Hurricanes
+- platform: teamtracker
+  league_id: NHL
+  team_id: WSH
+  name: Washington Senators
+- platform: teamtracker
+  league_id: NHL
+  team_id: CGY
+  name: Calgary Flames
+- platform: teamtracker
+  league_id: NHL
+  team_id: NYR
+  name: New York Rangers
+- platform: teamtracker
+  league_id: NHL
+  team_id: VAN
+  name: Vancouver Canucks
+- platform: teamtracker
+  league_id: NHL
+  team_id: PHI
+  name: Philadelphia Fylers
+- platform: teamtracker
+  league_id: NHL
+  team_id: LA
+  name: Los Angeles Kings
+- platform: teamtracker
+  league_id: NHL
+  team_id: ARI
+  name: Arizona Coyotes
+- platform: teamtracker
+  league_id: NHL
+  team_id: SJ
+  name: San Jose Sharks
+- platform: teamtracker
+  league_id: NHL
+  team_id: BUF
+  name: Buffalo Sabres
+- platform: teamtracker
+  league_id: NHL
+  team_id: SEA
+  name: Seattle Kraken
+- platform: teamtracker
+  league_id: NHL
+  team_id: VGK
+  name: Los Vegas Golden Knights
+- platform: teamtracker
+  league_id: NHL
+  team_id: TB
+  name: Tampa Bay Lightning
+- platform: teamtracker
+  league_id: NHL
+  team_id: OTT
+  name: Ottawa Senators
+- platform: teamtracker
+  league_id: NHL
+  team_id: WPG
+  name: Winnipeg Jets
+- platform: teamtracker
+  league_id: NHL
+  team_id: EDM
+  name: Edmonton Oilers
+- platform: teamtracker
+  league_id: NHL
+  team_id: MIN
+  name: Minnesota Wild
+- platform: teamtracker
+  league_id: NHL
+  team_id: ANA
+  name: Anaheim Ducks
+- platform: teamtracker
+  league_id: NHL
+  team_id: CHI
+  name: Chicago Blackhawks
+##
+## MLB Teams
+##
+- platform: teamtracker
+  league_id: MLB
+  team_id: LAA
+  name: Los Angeles Angels
+- platform: teamtracker
+  league_id: MLB
+  team_id: CHW
+  name: Chicago White Sox
+- platform: teamtracker
+  league_id: MLB
+  team_id: CLE
+  name: Cleveland Guardians
+- platform: teamtracker
+  league_id: MLB
+  team_id: KC
+  name: Kansas City Royals
+- platform: teamtracker
+  league_id: MLB
+  team_id: MIL
+  name: Milwaukee Brewers
+- platform: teamtracker
+  league_id: MLB
+  team_id: OAK
+  name: Oakland Athletics
+- platform: teamtracker
+  league_id: MLB
+  team_id: SEA
+  name: Seattle Mariners
+- platform: teamtracker
+  league_id: MLB
+  team_id: TEX
+  name: Texas Rangers
+- platform: teamtracker
+  league_id: MLB
+  team_id: CHC
+  name: Chicago Cubs
+- platform: teamtracker
+  league_id: MLB
+  team_id: CIN
+  name: Cincinnati Reds
+- platform: teamtracker
+  league_id: MLB
+  team_id: LAD
+  name: Los Angeles Dodgers
+- platform: teamtracker
+  league_id: MLB
+  team_id: SD
+  name: San Diego Padres
+- platform: teamtracker
+  league_id: MLB
+  team_id: SF
+  name: San Francisco Giants
+- platform: teamtracker
+  league_id: MLB
+  team_id: COL
+  name: Colorado Rockies
+- platform: teamtracker
+  league_id: MLB
+  team_id: ARI
+  name: Arizona Diamondbacks
+- platform: teamtracker
+  league_id: MLB
+  team_id: BAL
+  name: Baltimore Orioles
+- platform: teamtracker
+  league_id: MLB
+  team_id: BOS
+  name: Boston Red Sox
+- platform: teamtracker
+  league_id: MLB
+  team_id: DET
+  name: Detroit Tigers
+- platform: teamtracker
+  league_id: MLB
+  team_id: MIN
+  name: Minnesota Twins
+- platform: teamtracker
+  league_id: MLB
+  team_id: NYY
+  name: New York Yankees
+- platform: teamtracker
+  league_id: MLB
+  team_id: TOR
+  name: Toronto Blue Jays
+- platform: teamtracker
+  league_id: MLB
+  team_id: ATL
+  name: Atlanta Braves
+- platform: teamtracker
+  league_id: MLB
+  team_id: HOU
+  name: Houston Astros
+- platform: teamtracker
+  league_id: MLB
+  team_id: WSH
+  name: Washington Nationals
+- platform: teamtracker
+  league_id: MLB
+  team_id: NYM
+  name: New York Mets
+- platform: teamtracker
+  league_id: MLB
+  team_id: PHI
+  name: Philadelphia Phillies
+- platform: teamtracker
+  league_id: MLB
+  team_id: PIT
+  name: Pittsburgh Pirates
+- platform: teamtracker
+  league_id: MLB
+  team_id: STL
+  name: St. Louis Cardinals
+- platform: teamtracker
+  league_id: MLB
+  team_id: MIA
+  name: Miami Marlins
+- platform: teamtracker
+  league_id: MLB
+  team_id: TB
+  name: Tampa Bay Rays
+## 
+## NBA Teams
+##
+- platform: teamtracker
+  league_id: NBA
+  team_id: TOR
+  name: Toronto Raptors
+- platform: teamtracker
+  league_id: NBA
+  team_id: BKN
+  name: Brooklyn Nets
+- platform: teamtracker
+  league_id: NBA
+  team_id: NY
+  name: New York Knicks
+- platform: teamtracker
+  league_id: NBA
+  team_id: PHI
+  name: Philadelphia 76ers
+- platform: teamtracker
+  league_id: NBA
+  team_id: BOS
+  name: Boston Celtics
+- platform: teamtracker
+  league_id: NBA
+  team_id: DET
+  name: Detroit Pistons
+- platform: teamtracker
+  league_id: NBA
+  team_id: IND
+  name: Indiana Pacers
+- platform: teamtracker
+  league_id: NBA
+  team_id: CHI
+  name: Chicago Bulls
+- platform: teamtracker
+  league_id: NBA
+  team_id: CLE
+  name: Cleveland Cavaliers
+- platform: teamtracker
+  league_id: NBA
+  team_id: MIL
+  name: Milwaukee Bucks
+- platform: teamtracker
+  league_id: NBA
+  team_id: CHA
+  name: Charlotte Hornets
+- platform: teamtracker
+  league_id: NBA
+  team_id: ORL
+  name: Orlando Magic
+- platform: teamtracker
+  league_id: NBA
+  team_id: WSH
+  name: Washington Wizards
+- platform: teamtracker
+  league_id: NBA
+  team_id: ATL
+  name: Atlanta Hawks
+- platform: teamtracker
+  league_id: NBA
+  team_id: MIA
+  name: Miami Heat
+- platform: teamtracker
+  league_id: NBA
+  team_id: UTAH
+  name: Utah Jazz
+- platform: teamtracker
+  league_id: NBA
+  team_id: OKC
+  name: Oklahoma City Thunder
+- platform: teamtracker
+  league_id: NBA
+  team_id: POR
+  name: Portland Trail Blazers
+- platform: teamtracker
+  league_id: NBA
+  team_id: MIN
+  name: Minnesota Timberwolves
+- platform: teamtracker
+  league_id: NBA
+  team_id: DEN
+  name: Denver Nuggets
+- platform: teamtracker
+  league_id: NBA
+  team_id: LAL
+  name: Los Angeles Lakers
+- platform: teamtracker
+  league_id: NBA
+  team_id: LAC
+  name: LA Clippers
+- platform: teamtracker
+  league_id: NBA
+  team_id: GS
+  name: Golden State Warriors
+- platform: teamtracker
+  league_id: NBA
+  team_id: PHX
+  name: Phoenix Suns
+- platform: teamtracker
+  league_id: NBA
+  team_id: SAC
+  name: Sacramento Kings
+- platform: teamtracker
+  league_id: NBA
+  team_id: HOU
+  name: Houston Rockets
+- platform: teamtracker
+  league_id: NBA
+  team_id: SA
+  name: San Antonio Spurs
+- platform: teamtracker
+  league_id: NBA
+  team_id: NO
+  name: New Orleans Pelicans
+- platform: teamtracker
+  league_id: NBA
+  team_id: DAL
+  name: Dallas Mavericks
+- platform: teamtracker
+  league_id: NBA
+  team_id: MEM
+  name: Memphis Grizzlies

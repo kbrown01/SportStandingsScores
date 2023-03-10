@@ -1,0 +1,132 @@
+###
+### MLB Divisions
+###
+  - name: MLB American East
+    unique_id: sensor.mlb_american_east
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][0]['standings']['entries'] }}"
+  - name: MLB American Central
+    unique_id: sensor.mlb_american_central
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][1]['standings']['entries'] }}"
+  - name: MLB American West
+    unique_id: sensor.mlb_american_west
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][2]['standings']['entries'] }}"
+  - name: MLB National East
+    unique_id: sensor.mlb_national_east
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][0]['standings']['entries'] }}"
+  - name: MLB National Central
+    unique_id: sensor.mlb_national_central
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][1]['standings']['entries'] }}"
+  - name: MLB National West
+    unique_id: sensor.mlb_national_west
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][2]['standings']['entries'] }}"
+###
+### NHL Divisions
+###
+  - name: NHL East Atlantic
+    unique_id: sensor.nhl_east_atlantic
+    state: "{{ now() }}"
+    attributes:
+      entries: "{{ state_attr('sensor.nhl_standings','children')[0]['children'][0]['standings']['entries'] }}"
+  - name: NHL East Metropolitan
+    unique_id: sensor.nhl_east_metropolitan
+    state: "{{ now() }}"
+    attributes:
+      entries: "{{ state_attr('sensor.nhl_standings','children')[0]['children'][1]['standings']['entries'] }}"
+  - name: NHL West Central
+    unique_id: sensor.nhl_west_central
+    state: "{{ now() }}"
+    attributes:
+      entries: "{{ state_attr('sensor.nhl_standings','children')[1]['children'][0]['standings']['entries'] }}"
+  - name: NHL West Pacific
+    unique_id: sensor.nhl_west_pacific
+    state: "{{ now() }}"
+    attributes:
+      entries: "{{ state_attr('sensor.nhl_standings','children')[1]['children'][1]['standings']['entries'] }}"
+###
+### NFL Divisions
+###
+  - name: NFL AFC East
+    unique_id: sensor.nfl_afc_east
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][0]['standings']['entries'] }}"
+  - name: NFL AFC North
+    unique_id: sensor.nfl_afc_north
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][1]['standings']['entries'] }}"
+  - name: NFL AFC South
+    unique_id: sensor.nfl_afc_south
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][2]['standings']['entries'] }}"
+  - name: NFL AFC West
+    unique_id: sensor.nfl_afc_west
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][3]['standings']['entries'] }}"
+  - name: NFL NFC East
+    unique_id: sensor.nfl_nfc_east
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][0]['standings']['entries'] }}"
+  - name: NFL NFC North
+    unique_id: sensor.nfl_nfc_north
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][1]['standings']['entries'] }}"
+  - name: NFL NFC South
+    unique_id: sensor.nfl_nfc_south
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][2]['standings']['entries'] }}"
+  - name: NFL NFC West
+    unique_id: sensor.nfl_nfc_west
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][3]['standings']['entries'] }}"
+###
+### NBA Divisions
+###
+  - name: NBA Eastern Atlantic
+    unique_id: sensor.nba_eastern_atlantic
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][0]['standings']['entries'] }}"
+  - name: NBA Eastern Central
+    unique_id: sensor.nba_eastern_central
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][1]['standings']['entries'] }}"
+  - name: NBA Eastern Southeast
+    unique_id: sensor.nba_eastern_southeast
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][2]['standings']['entries'] }}"
+  - name: NBA Western Northwest
+    unique_id: sensor.nba_western_northwest
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][0]['standings']['entries'] }}"
+  - name: NBA Western Pacific
+    unique_id: sensor.nba_western_pacific
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][1]['standings']['entries'] }}"
+  - name: NBA Western Southwest
+    unique_id: sensor.nba_western_southwest
+    state: "{{ now() }}"
+    attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][2]['standings']['entries'] }}"

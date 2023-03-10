@@ -1,0 +1,6 @@
+{% set team = state_attr('sensor.nba_standings','children')[0]['children'][0]['standings']['entries'][0] %}
+{% for stat in team.stats -%}
+  {{loop.index - 1 }} {{stat.name}}
+{% endfor %}
+
+
