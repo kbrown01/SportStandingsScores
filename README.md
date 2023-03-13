@@ -150,3 +150,10 @@ There is a help_template in a .txt file that can help you identify the fields th
 
 There are a few nice things done with card-mod to implement nicer tabs, colorize active tabs and provide scrolling tables horizontally on smaller displays.
 Although I will say that I designed this for wall pads in the house with large screens, I would likely change things if I ever implemented it to target phone devices.
+
+## What's New
+
+Changed from positional picking of the attributes as columns to using the abbreviation as a key.
+This was required to handle (for now NHL) standings that come back for teams but some have a CLINCH attribute and some do not.
+
+
