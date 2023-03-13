@@ -154,6 +154,6 @@ Although I will say that I designed this for wall pads in the house with large s
 ## What's New
 
 Changed from positional picking of the attributes as columns to using the abbreviation as a key.
-This was required to handle (for now NHL) standings that come back for teams but some have a CLINCH attribute and some do not.
+This was required to handle (for now NHL and NBA) standings that come back for teams but some have a CLINCH attribute and some do not.
 
 

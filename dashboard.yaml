@@ -261,49 +261,49 @@ decluttering_templates:
       columns:
         - hidden: true
           data: entries
-          modify: x.stats[4].displayValue
-        - name: PS
+          modify: '[[sort]]'
+        - name: C
           data: entries
-          modify: x.stats[7].displayValue
+          modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
           modify: x.team.displayName
         - name: W
           data: entries
-          modify: x.stats[10].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
         - name: L
           data: entries
-          modify: x.stats[6].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
         - name: GB
           data: entries
-          modify: x.stats[4].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'GB').displayValue
         - name: HOME
           data: entries
-          modify: x.stats[12].displayValue
+          modify: x.stats.find(y=>y.shortDisplayName == 'HOME').displayValue
         - name: AWAY
           data: entries
-          modify: x.stats[13].displayValue
+          modify: x.stats.find(y=>y.shortDisplayName == 'AWAY').displayValue
         - name: DIV
           data: entries
-          modify: x.stats[14].displayValue
+          modify: x.stats.find(y=>y.shortDisplayName == 'DIV').displayValue
         - name: CONF
           data: entries
-          modify: x.stats[15].displayValue
+          modify: x.stats.find(y=>y.shortDisplayName == 'CONF').displayValue
         - name: PPG
           data: entries
-          modify: x.stats[1].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'PPG').displayValue
         - name: OPP PPG
           data: entries
-          modify: x.stats[0].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'OPP PPG').displayValue
         - name: DIFF
           data: entries
-          modify: x.stats[2].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'DIFF').displayValue
         - name: STRK
           data: entries
-          modify: x.stats[8].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
         - name: L10
           data: entries
-          modify: x.stats[16].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'L10').displayValue
   game_stats:
     card:
       type: custom:auto-entities
@@ -892,31 +892,37 @@ views:
                                     variables:
                                       - title: Eastern Conference Atlantic
                                       - entity: sensor.nba_eastern_atlantic
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Eastern Conference Central
                                       - entity: sensor.nba_eastern_central
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Eastern Conference Southeast
                                       - entity: sensor.nba_eastern_southeast
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Northwest
                                       - entity: sensor.nba_western_northwest
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Pacific
                                       - entity: sensor.nba_western_pacific
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Southwest
                                       - entity: sensor.nba_western_southwest
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                             - attributes:
                                 label: Conference
                               card:
@@ -928,11 +934,13 @@ views:
                                     variables:
                                       - title: Eastern Conference
                                       - entity: sensor.nba_eastern_*
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference
                                       - entity: sensor.nba_western_*
+                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                             - attributes:
                                 label: Overall
                               card:
@@ -941,6 +949,7 @@ views:
                                 variables:
                                   - title: Overall
                                   - entity: sensor.nba_*_*
+                                  - sort: x.stats.find(y=>y.abbreviation == 'GB').value
                             - attributes:
                                 label: Playoffs
                               card:
