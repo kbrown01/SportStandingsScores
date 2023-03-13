@@ -5,7 +5,7 @@ decluttering_templates:
       title: '[[title]]'
       css:
         table+: 'padding: 0px; width: 1600px;'
-        tbody tr td:first-child: 'width: 5%;'
+        tbody tr td:first-child: 'width: 2%;'
         tbody tr td:nth-child(2): 'width: 20%;'
         tbody tr td:nth-child(n+3): 'width: 5%;'
         tbody tr:hover: 'background-color: green!important; color:white!important;'
@@ -29,9 +29,9 @@ decluttering_templates:
         - hidden: true
           data: entries
           modify: '[[sort]]'
-        - name: SEED
+        - name: C
           data: entries
-          modify: x.stats.find(y=>y.abbreviation == 'SEED').displayValue
+          modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
           modify: x.team.displayName
