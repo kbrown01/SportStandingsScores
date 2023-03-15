@@ -34,7 +34,7 @@ decluttering_templates:
           modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
-          modify: x.team.displayName
+          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
         - name: GP
           data: entries
           modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
@@ -114,7 +114,7 @@ decluttering_templates:
           modify: x.stats[16].value
         - name: Team
           data: entries
-          modify: x.team.displayName
+          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
         - name: GP
           data: entries
           modify: x.stats[7].displayValue
@@ -192,7 +192,7 @@ decluttering_templates:
           modify: x.stats[0].displayValue
         - name: Team
           data: entries
-          modify: x.team.displayName
+          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
         - name: GP
           data: entries
           modify: x.stats[10].value + x.stats[3].value + x.stats[8].value
@@ -267,7 +267,7 @@ decluttering_templates:
           modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
-          modify: x.team.displayName
+          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
         - name: W
           data: entries
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
