@@ -320,7 +320,8 @@ decluttering_templates:
             {%- if states(team) == "[[status]]" -%}
             {%- if state_attr(team, "team_homeaway") == "home" -%}
               {{{"type": "custom:teamtracker-card",
-                "entity": team }}},
+                "entity": team,
+                 "home_side": "right"}}},
             {%- endif -%}
             {%- endif -%}
             {%- endif -%}
