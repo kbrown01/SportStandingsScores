@@ -151,6 +151,56 @@ There is a help_template in a .txt file that can help you identify the fields th
 There are a few nice things done with card-mod to implement nicer tabs, colorize active tabs and provide scrolling tables horizontally on smaller displays.
 Although I will say that I designed this for wall pads in the house with large screens, I would likely change things if I ever implemented it to target phone devices.
 
+## What about Favorites?
+
+While it may be great to have dashboards for every team in every sport, sometimes you may just want to show your favorites.
+The easiest way to accomplish this is to create a Home Assistant group with just your favorities.
+You can use the Group Helper or use YAML. In YAML, one could do this:
+
+
+```
+team_favorities:
+    name: Team Favorities
+    entities:
+        - sensor.detroit_lions
+        - sensor.detroit_pistons
+        - sensor.detroit_red_wings
+        - sensor.detroit_tigers
+        - sensor.michigan_state_spartans
+        
+```
+I have a seperate card for this that is simple done this way:
+
+
+```
+type: custom:auto-entities
+unique: true
+show_empty: false
+card:
+  type: custom:layout-card
+  layout_type: masonry
+card_param: cards
+filter:
+  template: |
+    {%- for team in state_attr('group.team_favorities','entity_id') -%}
+      {%- if state_attr(team, "team_homeaway") == "home" -%}
+        {{{"type": "custom:teamtracker-card",
+          "entity": team,
+           "home_side": "right"}}},
+      {%- endif -%}
+    {%- endfor -%}
+  exclude:
+    - entity_id: '*team_tracker*'
+sort:
+  method: attribute
+  attribute: date
+```
+
+Notice that this keeps the home/away filtering because you may have two favorites playing eachother.
+This will show only one game and not a repeat of the second game.
+In my example, it combines all the sports -- NFL, MLB, NBA, NHL and another team from NCAAM.
+ 
+
 ## What's New
 
 Changed from positional picking of the attributes as columns to using the abbreviation as a key.
