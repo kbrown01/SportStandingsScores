@@ -24,64 +24,70 @@ decluttering_templates:
                }
       entities:
         include: '[[entity]]'
+        exclude: '[[excluded_entities]]'
       sort_by: entries-
       columns:
         - hidden: true
-          data: entries
+          data: '[[attribute]]'
           modify: '[[sort]]'
         - name: C
-          data: entries
-          modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
+          data: '[[attribute]]'
+          modify: >-
+            if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
+            'undefined' ){x.stats.find(y=>y.abbreviation ==
+            'CLINCH').displayValue}else{'-'}
         - name: Team
-          data: entries
-          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
+          data: '[[attribute]]'
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: GP
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
         - name: W
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
         - name: L
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
         - name: OTL
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'OTL').displayValue
         - name: PTS
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'PTS').displayValue
         - name: RW
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'RW').displayValue
         - name: ROW
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'ROW').displayValue
         - name: SOW
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOW').displayValue
         - name: SOL
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOL').displayValue
         - name: HOME
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'HOME').displayValue
         - name: AWAY
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'AWAY').displayValue
         - name: GF
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GF').displayValue
         - name: GA
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GA').displayValue
         - name: DIFF
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'DIFF').displayValue
         - name: L10
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L10').summary
         - name: STRK
-          data: entries
+          data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
   mlb_settings:
     card:
@@ -114,7 +120,9 @@ decluttering_templates:
           modify: x.stats[16].value
         - name: Team
           data: entries
-          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: GP
           data: entries
           modify: x.stats[7].displayValue
@@ -192,7 +200,9 @@ decluttering_templates:
           modify: x.stats[0].displayValue
         - name: Team
           data: entries
-          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: GP
           data: entries
           modify: x.stats[10].value + x.stats[3].value + x.stats[8].value
@@ -264,10 +274,15 @@ decluttering_templates:
           modify: '[[sort]]'
         - name: C
           data: entries
-          modify: if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !== 'undefined' ){x.stats.find(y=>y.abbreviation == 'CLINCH').displayValue}else{'-'}
+          modify: >-
+            if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
+            'undefined' ){x.stats.find(y=>y.abbreviation ==
+            'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
-          modify: "'<div><img src=\"' + x.team.logos[0].href + '\" style=\"height: 20px;vertical-align:middle;\">&nbsp;' + x.team.displayName + '</div>'"
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: W
           data: entries
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
@@ -378,7 +393,7 @@ views:
                         border-top-right-radius: 20px;
                         border-style: solid;
                         overflow: hidden;
-                        width: 25%;
+                        width: 20%;
                       }
                       mwc-tab[active] {
                         background: #EBFFD8 !important;
@@ -429,25 +444,45 @@ views:
                                     variables:
                                       - title: Eastern Atlantic
                                       - entity: sensor.nhl_east_atlantic
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
                                       - title: Eastern Metropolitan
                                       - entity: sensor.nhl_east_metropolitan
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
                                       - title: West Central
                                       - entity: sensor.nhl_west_central
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
                                       - title: West Pacific
                                       - entity: sensor.nhl_west_pacific
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                             - attributes:
                                 label: Conference
                               card:
@@ -459,13 +494,23 @@ views:
                                     variables:
                                       - title: Eastern
                                       - entity: sensor.nhl_east_*
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
                                       - title: Western
                                       - entity: sensor.nhl_west_*
-                                      - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                      - attribute: entries
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                             - attributes:
                                 label: Overall
                               card:
@@ -474,9 +519,16 @@ views:
                                 variables:
                                   - title: Overall
                                   - entity: sensor.nhl_*_*
-                                  - sort: x.stats.find(y=>y.shortDisplayName == 'PTS').value
+                                  - attribute: entries
+                                  - excluded_entities:
+                                      - sensor.nhl_starting_goalies
+                                      - sensor.nhl_wildcard
+                                      - sensor.nhl_wildcard_standings
+                                  - sort: >-
+                                      x.stats.find(y=>y.shortDisplayName ==
+                                      'PTS').value
                             - attributes:
-                                label: Playoffs
+                                label: Wildcard
                               card:
                                 type: custom:stack-in-card
                                 mode: vertical
@@ -484,15 +536,69 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Eastern
-                                      - entity: sensor.nhl_east_*
-                                      - sort: x.stats[5].value * -1
+                                      - title: Eastern Atlantic
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: east_atlantic_top
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Western
-                                      - entity: sensor.nhl_west_*
-                                      - sort: x.stats[5].value * -1
+                                      - title: Eastern Metropolitan
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: east_metropolitan_top
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Eastern Wildcard
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: east_wildcard
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Western Central
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: west_central_top
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Western Pacific
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: west_pacific_top
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Western Wildcard
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: west_wildcard
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
                     - attributes:
                         label: Postgame
                         icon: mdi:hockey-sticks
@@ -520,6 +626,131 @@ views:
                         variables:
                           - sport: NHL
                           - status: PRE
+                    - attributes:
+                        label: Starting Goalies
+                        icon: mdi:strategy
+                      card:
+                        type: custom:flex-table-card
+                        title: Starting Goalies
+                        css:
+                          table+: 'padding: 0px; width: 1600px;'
+                          tbody tr:hover: >-
+                            background-color: green!important;
+                            color:white!important;
+                          tbody tr td:nth-child(10): 'background-color: green; color: white;'
+                        card_mod:
+                          style: |
+                            ha-card {
+                                overflow: auto;
+                            }
+                            $: |
+                                .card-header {
+                                   padding: 12px 0px 8px 4px!important;
+                                   font-size: 16px!important;
+                                   line-height: 18px!important;
+                                   font-weight: bold!important;
+                                 }
+                        entities:
+                          include: sensor.nhl_starting_goalies
+                        columns:
+                          - name: HOME
+                            data: data
+                            modify: >-
+                              '<div><img src="' + x.homeTeamLogoSvg + '"
+                              style="height:
+                              20px;vertical-align:middle;">&nbsp;' +
+                              x.homeTeamName + '</div>'
+                          - name: GOALIE
+                            data: data
+                            modify: x.homeGoalieName
+                          - name: RANK
+                            data: data
+                            modify: >-
+                              if(x.homeGoaliePositionRank === null
+                              ){'None'}else{x.homeGoaliePositionRank}
+                          - name: W
+                            data: data
+                            modify: >-
+                              if(x.homeGoalieWins === null
+                              ){'0'}else{x.homeGoalieWins}
+                          - name: L
+                            data: data
+                            modify: >-
+                              if(x.homeGoalieLosses === null
+                              ){'0'}else{x.homeGoalieLosses}
+                          - name: OTL
+                            data: data
+                            modify: >-
+                              if(x.homeGoalieOvertimeLosses === null
+                              ){'0'}else{x.homeGoalieOvertimeLosses}
+                          - name: SO
+                            data: data
+                            modify: >-
+                              if(x.homeGoalieShutouts === null
+                              ){'0'}else{x.homeGoalieShutouts}
+                          - name: SVP
+                            data: data
+                            modify: Number(x.homeGoalieSavePercentage).toFixed(3)
+                          - name: GAA
+                            data: data
+                            modify: Number(x.homeGoalieGoalsAgainstAvg).toFixed(2)
+                          - name: PICK
+                            data: data
+                            modify: |-
+                              switch(true){
+                                case (x.homeGoalieGoalsAgainstAvg == 0) || (x.awayGoalieGoalsAgainstAvg == 0) :
+                                  '<div style="text-align:center;"><ha-icon icon="mdi:crosshairs-question"></div>';
+                                  break;
+                                case (x.homeGoalieGoalsAgainstAvg - x.awayGoalieGoalsAgainstAvg) > 0:
+                                  '<div style="text-align:center;"><ha-icon icon="mdi:arrow-right"></div>';
+                                  break;
+                                case (x.homeGoalieGoalsAgainstAvg - x.awayGoalieGoalsAgainstAvg) < 0:
+                                  '<div style="text-align:center;"><ha-icon icon="mdi:arrow-left"></div>';
+                                  break;
+                                default:
+                                  '<div style="text-align:center;"><ha-icon icon="mdi:arrow-all"></div>';
+                                }
+                          - name: AWAY
+                            data: data
+                            modify: >-
+                              '<div><img src="' + x.awayTeamLogoSvg + '"
+                              style="height:
+                              20px;vertical-align:middle;">&nbsp;' +
+                              x.awayTeamName + '</div>'
+                          - name: GOALIE
+                            data: data
+                            modify: x.awayGoalieName
+                          - name: RANK
+                            data: data
+                            modify: >-
+                              if(x.awayGoaliePositionRank == null
+                              ){'None'}else{x.awayGoaliePositionRank}
+                          - name: W
+                            data: data
+                            modify: >-
+                              if(x.awayGoalieWins === null
+                              ){'0'}else{x.awayGoalieWins}
+                          - name: L
+                            data: data
+                            modify: >-
+                              if(x.awayGoalieLosses === null
+                              ){'0'}else{x.awayGoalieLosses}
+                          - name: OTL
+                            data: data
+                            modify: >-
+                              if(x.awayGoalieOvertimeLosses === null
+                              ){'0'}else{x.awayGoalieOvertimeLosses}
+                          - name: SO
+                            data: data
+                            modify: >-
+                              if(x.awayGoalieShutouts === null
+                              ){'0'}else{x.awayGoalieShutouts}
+                          - name: SVP
+                            data: data
+                            modify: Number(x.awayGoalieSavePercentage).toFixed(3)
+                          - name: GAA
+                            data: data
+                            modify: Number(x.awayGoalieGoalsAgainstAvg).toFixed(2)
             - attributes:
                 label: NFL
                 icon: mdi:football
@@ -893,37 +1124,49 @@ views:
                                     variables:
                                       - title: Eastern Conference Atlantic
                                       - entity: sensor.nba_eastern_atlantic
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Eastern Conference Central
                                       - entity: sensor.nba_eastern_central
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Eastern Conference Southeast
                                       - entity: sensor.nba_eastern_southeast
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Northwest
                                       - entity: sensor.nba_western_northwest
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Pacific
                                       - entity: sensor.nba_western_pacific
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference Southwest
                                       - entity: sensor.nba_western_southwest
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                             - attributes:
                                 label: Conference
                               card:
@@ -935,13 +1178,17 @@ views:
                                     variables:
                                       - title: Eastern Conference
                                       - entity: sensor.nba_eastern_*
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                                   - type: custom:decluttering-card
                                     template: nba_settings
                                     variables:
                                       - title: Western Conference
                                       - entity: sensor.nba_western_*
-                                      - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                      - sort: >-
+                                          x.stats.find(y=>y.abbreviation ==
+                                          'GB').value
                             - attributes:
                                 label: Overall
                               card:
@@ -950,7 +1197,9 @@ views:
                                 variables:
                                   - title: Overall
                                   - entity: sensor.nba_*_*
-                                  - sort: x.stats.find(y=>y.abbreviation == 'GB').value
+                                  - sort: >-
+                                      x.stats.find(y=>y.abbreviation ==
+                                      'GB').value
                             - attributes:
                                 label: Playoffs
                               card:

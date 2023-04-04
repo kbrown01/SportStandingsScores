@@ -551,3 +551,17 @@
   league_id: NBA
   team_id: MEM
   name: Memphis Grizzlies
+##
+## Starting Goalies
+##
+## NOTE: At this time this does not work as expected. The resource link changes daily and you need to get the new link from the site.
+## Currenty looking at alternatives
+##
+- platform: rest
+  name: nhl_starting_goalies
+  scan_interval: 3600
+  resource: https://www.dailyfaceoff.com/_next/data/q_XkeY-XNmz9svQccaln1/starting-goalies.json
+  value_template: "{{ value_json.pageProps.date }}"
+  json_attributes_path: "$.pageProps"
+  json_attributes:
+    - data

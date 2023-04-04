@@ -55,6 +55,19 @@
     attributes:
       entries: "{{ state_attr('sensor.nhl_standings','children')[1]['children'][1]['standings']['entries'] }}"
 ###
+### NHL Wildcard
+###
+  - name: NHL Wildcard Standings
+    unique_id: sensor.nhl_wildcard_standings
+    state: "{{ now() }}"
+    attributes:
+      east_atlantic_top: "{{ state_attr('sensor.nhl_wildcard','overall')[0]['children'][0]['standings']['entries'] }}"
+      east_metropolitan_top: "{{ state_attr('sensor.nhl_wildcard','overall')[0]['children'][1]['standings']['entries'] }}"
+      east_wildcard: "{{ state_attr('sensor.nhl_wildcard','children')[0]['standings']['entries'] }}"
+      west_central_top: "{{ state_attr('sensor.nhl_wildcard','overall')[1]['children'][0]['standings']['entries'] }}"
+      west_pacific_top: "{{ state_attr('sensor.nhl_wildcard','overall')[1]['children'][1]['standings']['entries'] }}"
+      west_wildcard: "{{ state_attr('sensor.nhl_wildcard','children')[1]['standings']['entries'] }}"
+###
 ### NFL Divisions
 ###
   - name: NFL AFC East
