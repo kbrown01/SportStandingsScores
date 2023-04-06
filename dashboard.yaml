@@ -11,17 +11,19 @@ decluttering_templates:
         tbody tr:hover: 'background-color: green!important; color:white!important;'
         tbody tr td:nth-child(7): 'background-color: green; color: white;'
       card_mod:
-        style: |
-          ha-card {
+        style:
+          .: |
+            ha-card {
               overflow: auto;
-          }
+              }
           $: |
-              .card-header {
-                 padding: 12px 0px 8px 4px!important;
-                 font-size: 16px!important;
-                 line-height: 18px!important;
-                 font-weight: bold!important;
-               }
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
       entities:
         include: '[[entity]]'
         exclude: '[[excluded_entities]]'
@@ -100,17 +102,19 @@ decluttering_templates:
         tbody tr:hover: 'background-color: green!important; color:white!important;'
         tbody tr td:nth-child(6): 'background-color: green; color: white;'
       card_mod:
-        style: |
-          ha-card {
+        style:
+          .: |
+            ha-card {
               overflow: auto;
-          }
+              }
           $: |
-              .card-header {
-                 padding: 12px 0px 8px 4px!important;
-                 font-size: 16px!important;
-                 line-height: 18px!important;
-                 font-weight: bold!important;
-               }
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
       entities:
         include: '[[entity]]'
       sort_by: entries-
@@ -177,17 +181,19 @@ decluttering_templates:
         tbody tr:hover: 'background-color: green!important; color:white!important;'
         tbody tr td:nth-child(6): 'background-color: green; color: white;'
       card_mod:
-        style: |
-          ha-card {
+        style:
+          .: |
+            ha-card {
               overflow: auto;
-          }
+              }
           $: |
-              .card-header {
-                 padding: 12px 0px 8px 4px!important;
-                 font-size: 16px!important;
-                 line-height: 18px!important;
-                 font-weight: bold!important;
-               }
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
       sort_by: entries-
       entities:
         include: '[[entity]]'
@@ -254,17 +260,19 @@ decluttering_templates:
         tbody tr:hover: 'background-color: green!important; color:white!important;'
         tbody tr td:nth-child(5): 'background-color: green; color: white;'
       card_mod:
-        style: |
-          ha-card {
+        style:
+          .: |
+            ha-card {
               overflow: auto;
-          }
+              }
           $: |
-              .card-header {
-                 padding: 12px 0px 8px 4px!important;
-                 font-size: 16px!important;
-                 line-height: 18px!important;
-                 font-weight: bold!important;
-               }
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
       sort_by: entries+
       entities:
         include: '[[entity]]'
@@ -533,10 +541,13 @@ views:
                                 type: custom:stack-in-card
                                 mode: vertical
                                 cards:
+                                  - type: markdown
+                                    content: |
+                                      <h2>Eastern Conference</h2>
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Eastern Atlantic
+                                      - title: Atlantic Leaders
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: east_atlantic_top
                                       - excluded_entities:
@@ -547,7 +558,7 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Eastern Metropolitan
+                                      - title: Metropolitan Leaders
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: east_metropolitan_top
                                       - excluded_entities:
@@ -558,7 +569,7 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Eastern Wildcard
+                                      - title: Wildcards
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: east_wildcard
                                       - excluded_entities:
@@ -569,7 +580,32 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Western Central
+                                      - title: In The Hunt
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: east_hunt
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Eliminated
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: east_eliminated
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: markdown
+                                    content: |
+                                      <h2>Western Conference</h2>
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Central Leaders
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: west_central_top
                                       - excluded_entities:
@@ -580,7 +616,7 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Western Pacific
+                                      - title: Pacific Leaders
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: west_pacific_top
                                       - excluded_entities:
@@ -591,9 +627,31 @@ views:
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
-                                      - title: Western Wildcard
+                                      - title: Wildcards
                                       - entity: sensor.nhl_wildcard_standings
                                       - attribute: west_wildcard
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: In The Hunt
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: west_hunt
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                      - sort: >-
+                                          x.stats.find(y=>y.shortDisplayName ==
+                                          'PTS').value
+                                  - type: custom:decluttering-card
+                                    template: nhl_settings
+                                    variables:
+                                      - title: Eliminated
+                                      - entity: sensor.nhl_wildcard_standings
+                                      - attribute: west_eliminated
                                       - excluded_entities:
                                           - sensor.nhl_starting_goalies
                                       - sort: >-
