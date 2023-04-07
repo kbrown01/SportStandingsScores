@@ -32,7 +32,11 @@ decluttering_templates:
         - hidden: true
           data: '[[attribute]]'
           modify: '[[sort]]'
-        - name: C
+        - name: '<div title="Clinch Indicator:&#10;
+            * : Presidents Trophy&#10;
+            x : Playoff Berth&#10;
+            - : In The Hunt&#10;
+            e : Eliminated">C</div>'
           data: '[[attribute]]'
           modify: >-
             if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
@@ -41,54 +45,56 @@ decluttering_templates:
         - name: Team
           data: '[[attribute]]'
           modify: >-
-            '<div><img src="' + x.team.logos[0].href + '" style="height:
-            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
-        - name: GP
+            '<div><a href="' + x.team.links[0].href + '" target="_blank"><img
+            src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;"></a>&nbsp;' + x.team.displayName +
+            '</div>'
+        - name: '<div title="Games Played">GP</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
-        - name: W
+        - name: '<div title="Wins">W</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
-        - name: L
+        - name: '<div title="Losses">L</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
-        - name: OTL
+        - name: '<div title="Overtime/Shootout Losses">OTL</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'OTL').displayValue
-        - name: PTS
+        - name: '<div title="Points">PTS</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'PTS').displayValue
-        - name: RW
+        - name: '<div title="Regulation Wins">RW</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'RW').displayValue
-        - name: ROW
+        - name: '<div title="Regulation and Overtime Wins">ROW</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'ROW').displayValue
-        - name: SOW
+        - name: '<div title="Shootout Wins">SOW</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOW').displayValue
-        - name: SOL
+        - name: '<div title="Shootout Losses">SOL</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOL').displayValue
-        - name: HOME
+        - name: '<div title="Home Record">HOME</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'HOME').displayValue
-        - name: AWAY
+        - name: '<div title="Away Record">AWAY</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'AWAY').displayValue
-        - name: GF
+        - name: '<div title="Goals For">GF</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GF').displayValue
-        - name: GA
+        - name: '<div title="Goals Against">GA</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GA').displayValue
-        - name: DIFF
+        - name: '<div title="Game Average Goal Differential">DIFF</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'DIFF').displayValue
-        - name: L10
+        - name: '<div title="Last 10 Games">L10</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L10').summary
-        - name: STRK
+        - name: '<div title="Current Streak">STRK</div>'
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
   mlb_settings:
