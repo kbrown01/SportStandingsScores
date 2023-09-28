@@ -1,0 +1,822 @@
+<xml version="1.0" encoding="UTF-8" href="gen_teamtracker_sensors.xsl">
+<entries>
+  <team>
+    <id>2046</id>
+    <uid>s:40~l:41~t:2046</uid>
+    <location>Austin Peay</location>
+    <name>Governors</name>
+    <abbreviation>APSU</abbreviation>
+    <displayName>Austin Peay Governors</displayName>
+    <shortDisplayName>Austin Peay</shortDisplayName>
+    <isActive>true</isActive>
+    <logos>
+      <href>https://a.espncdn.com/i/teamlogos/ncaa/500/2046.png</href>
+      <width>500</width>
+      <height>500</height>
+      <alt></alt>
+      <rel>full</rel>
+      <rel>default</rel>
+      <lastUpdated>2018-06-05T12:08Z</lastUpdated>
+    </logos>
+    <logos>
+      <href>https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2046.png</href>
+      <width>500</width>
+      <height>500</height>
+      <alt></alt>
+      <rel>full</rel>
+      <rel>dark</rel>
+      <lastUpdated>2018-06-05T12:08Z</lastUpdated>
+    </logos>
+    <links>
+      <language>en-US</language>
+      <rel>clubhouse</rel>
+      <rel>desktop</rel>
+      <rel>team</rel>
+      <href>https://www.espn.com/mens-college-basketball/team/_/id/2046/austin-peay-governors</href>
+      <text>Clubhouse</text>
+      <shortText>Clubhouse</shortText>
+      <isExternal>false</isExternal>
+      <isPremium>false</isPremium>
+    </links>
+  </team>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>avgpointsagainst</type>
+    <value>72.29032</value>
+    <displayValue>72.3</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>avgpointsfor</type>
+    <value>66.67742</value>
+    <displayValue>66.7</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>gamesbehind</type>
+    <value>15.5</value>
+    <displayValue>15.5</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>leaguewinpercent</type>
+    <value>0.16666667</value>
+    <displayValue>0.167</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>losses</type>
+    <value>22</value>
+    <displayValue>22</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>pointdifferential</type>
+    <value>-174</value>
+    <displayValue>-174</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>pointsagainst</type>
+    <value>2241</value>
+    <displayValue>2241</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>pointsfor</type>
+    <value>2067</value>
+    <displayValue>2067</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>winpercent</type>
+    <value>0.29032257</value>
+    <displayValue>.290</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>wins</type>
+    <value>9</value>
+    <displayValue>9</displayValue>
+  </stats>
+  <stats>
+    <id>0</id>
+    <name>overall</name>
+    <abbreviation>Season</abbreviation>
+    <displayName>Team Season Record</displayName>
+    <shortDisplayName>Season</shortDisplayName>
+    <description>Overall Record</description>
+    <type>total</type>
+    <summary>9-22</summary>
+    <displayValue>9-22</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>home_avgpointsagainst</type>
+    <value>67</value>
+    <displayValue>67.0</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>home_avgpointsfor</type>
+    <value>71.73333</value>
+    <displayValue>71.7</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>home_gamesbehind</type>
+    <value>9</value>
+    <displayValue>9</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>home_leaguewinpercent</type>
+    <value>0.33333334</value>
+    <displayValue>0.333</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>home_losses</type>
+    <value>8</value>
+    <displayValue>8</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>home_playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>home_pointdifferential</type>
+    <value>71</value>
+    <displayValue>+71</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>home_pointsagainst</type>
+    <value>1005</value>
+    <displayValue>1005</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>home_pointsfor</type>
+    <value>1076</value>
+    <displayValue>1076</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>home_streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>home_winpercent</type>
+    <value>0.46666667</value>
+    <displayValue>.467</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>home_wins</type>
+    <value>7</value>
+    <displayValue>7</displayValue>
+  </stats>
+  <stats>
+    <id>2</id>
+    <name>Home</name>
+    <abbreviation>Home</abbreviation>
+    <displayName>Home</displayName>
+    <shortDisplayName>HOME</shortDisplayName>
+    <description>Home Record</description>
+    <type>home</type>
+    <summary>7-8</summary>
+    <displayValue>7-8</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>road_avgpointsagainst</type>
+    <value>78.42857</value>
+    <displayValue>78.4</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>road_avgpointsfor</type>
+    <value>60.857143</value>
+    <displayValue>60.9</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>road_gamesbehind</type>
+    <value>8</value>
+    <displayValue>8</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>road_leaguewinpercent</type>
+    <value>0</value>
+    <displayValue>0.000</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>road_losses</type>
+    <value>13</value>
+    <displayValue>13</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>road_playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>road_pointdifferential</type>
+    <value>-246</value>
+    <displayValue>-246</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>road_pointsagainst</type>
+    <value>1098</value>
+    <displayValue>1098</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>road_pointsfor</type>
+    <value>852</value>
+    <displayValue>852</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>road_streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>road_winpercent</type>
+    <value>0.071428575</value>
+    <displayValue>.071</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>road_wins</type>
+    <value>1</value>
+    <displayValue>1</displayValue>
+  </stats>
+  <stats>
+    <id>3</id>
+    <name>Road</name>
+    <abbreviation>AWAY</abbreviation>
+    <displayName>Away</displayName>
+    <shortDisplayName>AWAY</shortDisplayName>
+    <description>Away Record</description>
+    <type>road</type>
+    <summary>1-13</summary>
+    <displayValue>1-13</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>vsaprankedteams_avgpointsagainst</type>
+    <value>86</value>
+    <displayValue>86.0</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>vsaprankedteams_avgpointsfor</type>
+    <value>44</value>
+    <displayValue>44.0</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>vsaprankedteams_gamesbehind</type>
+    <value>0</value>
+    <displayValue>-</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>vsaprankedteams_leaguewinpercent</type>
+    <value>0</value>
+    <displayValue>0.000</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>vsaprankedteams_losses</type>
+    <value>1</value>
+    <displayValue>1</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>vsaprankedteams_playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>vsaprankedteams_pointdifferential</type>
+    <value>-42</value>
+    <displayValue>-42</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>vsaprankedteams_pointsagainst</type>
+    <value>86</value>
+    <displayValue>86</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>vsaprankedteams_pointsfor</type>
+    <value>44</value>
+    <displayValue>44</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>vsaprankedteams_streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>vsaprankedteams_winpercent</type>
+    <value>0</value>
+    <displayValue>.000</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>vsaprankedteams_wins</type>
+    <value>0</value>
+    <displayValue>0</displayValue>
+  </stats>
+  <stats>
+    <id>4</id>
+    <name>vs AP Top 25</name>
+    <abbreviation>VS AP</abbreviation>
+    <type>vsaprankedteams</type>
+    <summary>0-1</summary>
+    <displayValue>0-1</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>vsusarankedteams_avgpointsagainst</type>
+    <value>86</value>
+    <displayValue>86.0</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>vsusarankedteams_avgpointsfor</type>
+    <value>44</value>
+    <displayValue>44.0</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>vsusarankedteams_gamesbehind</type>
+    <value>0</value>
+    <displayValue>-</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>vsusarankedteams_leaguewinpercent</type>
+    <value>0</value>
+    <displayValue>0.000</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>vsusarankedteams_losses</type>
+    <value>1</value>
+    <displayValue>1</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>vsusarankedteams_playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>vsusarankedteams_pointdifferential</type>
+    <value>-42</value>
+    <displayValue>-42</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>vsusarankedteams_pointsagainst</type>
+    <value>86</value>
+    <displayValue>86</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>vsusarankedteams_pointsfor</type>
+    <value>44</value>
+    <displayValue>44</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>vsusarankedteams_streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>vsusarankedteams_winpercent</type>
+    <value>0</value>
+    <displayValue>.000</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>vsusarankedteams_wins</type>
+    <value>0</value>
+    <displayValue>0</displayValue>
+  </stats>
+  <stats>
+    <id>6</id>
+    <name>vs USA ranked teams</name>
+    <abbreviation>VS USA</abbreviation>
+    <type>vsusarankedteams</type>
+    <summary>0-1</summary>
+    <displayValue>0-1</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsAgainst</name>
+    <displayName>Opponent Points Per Game</displayName>
+    <shortDisplayName>OPP PPG</shortDisplayName>
+    <description>Opponent Points Per Game</description>
+    <abbreviation>OPP PPG</abbreviation>
+    <type>vsconf_avgpointsagainst</type>
+    <value>74.611115</value>
+    <displayValue>74.6</displayValue>
+  </stats>
+  <stats>
+    <name>avgPointsFor</name>
+    <displayName>Points Per Game</displayName>
+    <shortDisplayName>PPG</shortDisplayName>
+    <description>Points Per Game</description>
+    <abbreviation>PPG</abbreviation>
+    <type>vsconf_avgpointsfor</type>
+    <value>65.333336</value>
+    <displayValue>65.3</displayValue>
+  </stats>
+  <stats>
+    <name>gamesBehind</name>
+    <displayName>Games Back</displayName>
+    <shortDisplayName>GB</shortDisplayName>
+    <description>Games Back</description>
+    <abbreviation>GB</abbreviation>
+    <type>vsconf_gamesbehind</type>
+    <value>12</value>
+    <displayValue>12</displayValue>
+  </stats>
+  <stats>
+    <name>leagueWinPercent</name>
+    <displayName>League Win Percentage</displayName>
+    <shortDisplayName>LPCT</shortDisplayName>
+    <description>League Winning Percentage</description>
+    <abbreviation>LPCT</abbreviation>
+    <type>vsconf_leaguewinpercent</type>
+    <value>0.16666667</value>
+    <displayValue>0.167</displayValue>
+  </stats>
+  <stats>
+    <name>losses</name>
+    <displayName>Losses</displayName>
+    <shortDisplayName>L</shortDisplayName>
+    <description>Losses</description>
+    <abbreviation>L</abbreviation>
+    <type>vsconf_losses</type>
+    <value>15</value>
+    <displayValue>15</displayValue>
+  </stats>
+  <stats>
+    <name>playoffSeed</name>
+    <displayName>Position</displayName>
+    <shortDisplayName>POS</shortDisplayName>
+    <description>Playoff Seed</description>
+    <abbreviation>SEED</abbreviation>
+    <type>vsconf_playoffseed</type>
+    <value>14</value>
+    <displayValue>14</displayValue>
+  </stats>
+  <stats>
+    <name>pointDifferential</name>
+    <displayName>Point Differential</displayName>
+    <shortDisplayName>DIFF</shortDisplayName>
+    <description>Point Differential</description>
+    <abbreviation>DIFF</abbreviation>
+    <type>vsconf_pointdifferential</type>
+    <value>-167</value>
+    <displayValue>-167</displayValue>
+  </stats>
+  <stats>
+    <name>pointsAgainst</name>
+    <displayName>Points Against</displayName>
+    <shortDisplayName>PA</shortDisplayName>
+    <description>Total Points Against</description>
+    <abbreviation>PA</abbreviation>
+    <type>vsconf_pointsagainst</type>
+    <value>1343</value>
+    <displayValue>1343</displayValue>
+  </stats>
+  <stats>
+    <name>pointsFor</name>
+    <displayName>Points For</displayName>
+    <shortDisplayName>PF</shortDisplayName>
+    <description>Total Points For</description>
+    <abbreviation>PF</abbreviation>
+    <type>vsconf_pointsfor</type>
+    <value>1176</value>
+    <displayValue>1176</displayValue>
+  </stats>
+  <stats>
+    <name>streak</name>
+    <displayName>Streak</displayName>
+    <shortDisplayName>STRK</shortDisplayName>
+    <description>Current Streak</description>
+    <abbreviation>STRK</abbreviation>
+    <type>vsconf_streak</type>
+    <value>-2</value>
+    <displayValue>L2</displayValue>
+  </stats>
+  <stats>
+    <name>winPercent</name>
+    <displayName>Win Percentage</displayName>
+    <shortDisplayName>PCT</shortDisplayName>
+    <description>Winning Percentage</description>
+    <abbreviation>PCT</abbreviation>
+    <type>vsconf_winpercent</type>
+    <value>0.16666667</value>
+    <displayValue>.167</displayValue>
+  </stats>
+  <stats>
+    <name>wins</name>
+    <displayName>Wins</displayName>
+    <shortDisplayName>W</shortDisplayName>
+    <description>Wins</description>
+    <abbreviation>W</abbreviation>
+    <type>vsconf_wins</type>
+    <value>3</value>
+    <displayValue>3</displayValue>
+  </stats>
+  <stats>
+    <id>9</id>
+    <name>vs. Conf.</name>
+    <abbreviation>VS CONF</abbreviation>
+    <displayName>CONF</displayName>
+    <shortDisplayName>CONF</shortDisplayName>
+    <description>Conference Record</description>
+    <type>vsconf</type>
+    <summary>3-15</summary>
+    <displayValue>3-15</displayValue>
+  </stats>
+</entries>

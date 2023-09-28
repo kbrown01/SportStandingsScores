@@ -1,3 +1,4 @@
+title: Sports Standings and Scores
 decluttering_templates:
   nhl_settings:
     card:
@@ -32,11 +33,9 @@ decluttering_templates:
         - hidden: true
           data: '[[attribute]]'
           modify: '[[sort]]'
-        - name: '<div title="Clinch Indicator:&#10;
-            * : Presidents Trophy&#10;
-            x : Playoff Berth&#10;
-            - : In The Hunt&#10;
-            e : Eliminated">C</div>'
+        - name: >-
+            <div title="Clinch Indicator:&#10; * : Presidents Trophy&#10; x :
+            Playoff Berth&#10; - : In The Hunt&#10; e : Eliminated">C</div>
           data: '[[attribute]]'
           modify: >-
             if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
@@ -49,52 +48,52 @@ decluttering_templates:
             src="' + x.team.logos[0].href + '" style="height:
             20px;vertical-align:middle;"></a>&nbsp;' + x.team.displayName +
             '</div>'
-        - name: '<div title="Games Played">GP</div>'
+        - name: <div title="Games Played">GP</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
-        - name: '<div title="Wins">W</div>'
+        - name: <div title="Wins">W</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
-        - name: '<div title="Losses">L</div>'
+        - name: <div title="Losses">L</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
-        - name: '<div title="Overtime/Shootout Losses">OTL</div>'
+        - name: <div title="Overtime/Shootout Losses">OTL</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'OTL').displayValue
-        - name: '<div title="Points">PTS</div>'
+        - name: <div title="Points">PTS</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'PTS').displayValue
-        - name: '<div title="Regulation Wins">RW</div>'
+        - name: <div title="Regulation Wins">RW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'RW').displayValue
-        - name: '<div title="Regulation and Overtime Wins">ROW</div>'
+        - name: <div title="Regulation and Overtime Wins">ROW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'ROW').displayValue
-        - name: '<div title="Shootout Wins">SOW</div>'
+        - name: <div title="Shootout Wins">SOW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOW').displayValue
-        - name: '<div title="Shootout Losses">SOL</div>'
+        - name: <div title="Shootout Losses">SOL</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOL').displayValue
-        - name: '<div title="Home Record">HOME</div>'
+        - name: <div title="Home Record">HOME</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'HOME').displayValue
-        - name: '<div title="Away Record">AWAY</div>'
+        - name: <div title="Away Record">AWAY</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'AWAY').displayValue
-        - name: '<div title="Goals For">GF</div>'
+        - name: <div title="Goals For">GF</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GF').displayValue
-        - name: '<div title="Goals Against">GA</div>'
+        - name: <div title="Goals Against">GA</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GA').displayValue
-        - name: '<div title="Game Average Goal Differential">DIFF</div>'
+        - name: <div title="Game Average Goal Differential">DIFF</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'DIFF').displayValue
-        - name: '<div title="Last 10 Games">L10</div>'
+        - name: <div title="Last 10 Games">L10</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L10').summary
-        - name: '<div title="Current Streak">STRK</div>'
+        - name: <div title="Current Streak">STRK</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
   mlb_settings:
@@ -103,10 +102,10 @@ decluttering_templates:
       title: '[[title]]'
       css:
         table+: 'padding: 0px; width: 1600px;'
-        tbody tr td:first-child: 'width: 20%;'
-        tbody tr td:nth-child(n+2): 'width: 5%;'
+        tbody tr td:first-child: 'width: 2%;'
+        tbody tr td:nth-child(2): 'width: 20%;'
+        tbody tr td:nth-child(n+3): 'width: 6%;'
         tbody tr:hover: 'background-color: green!important; color:white!important;'
-        tbody tr td:nth-child(6): 'background-color: green; color: white;'
       card_mod:
         style:
           .: |
@@ -123,11 +122,18 @@ decluttering_templates:
              }
       entities:
         include: '[[entity]]'
+        exclude: '[[excluded_entities]]'
       sort_by: entries-
       columns:
         - hidden: true
           data: entries
           modify: x.stats[16].value
+        - name: C
+          data: entries
+          modify: >-
+            if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
+            'undefined' ){x.stats.find(y=>y.abbreviation ==
+            'CLINCH').displayValue}else{'-'}
         - name: Team
           data: entries
           modify: >-
@@ -135,46 +141,105 @@ decluttering_templates:
             20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: GP
           data: entries
-          modify: x.stats[7].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
         - name: W
           data: entries
-          modify: x.stats[17].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
         - name: L
           data: entries
-          modify: x.stats[9].displayValue
-        - name: T
-          data: entries
-          modify: x.stats[15].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
         - name: PCT
           data: entries
-          modify: x.stats[16].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'PCT').displayValue
         - name: GB
           data: entries
-          modify: x.stats[6].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'GB').displayValue
         - name: PS
           data: entries
-          modify: x.stats[10].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'SEED').displayValue
         - name: HOME
           data: entries
-          modify: x.stats[33].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'Home').displayValue
         - name: AWAY
           data: entries
-          modify: x.stats[34].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'AWAY').displayValue
         - name: RS
           data: entries
-          modify: x.stats[13].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'RS').displayValue
         - name: RA
           data: entries
-          modify: x.stats[12].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'RA').displayValue
         - name: DIFF
           data: entries
-          modify: x.stats[27].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'ADIFF').displayValue
         - name: L10
           data: entries
-          modify: x.stats[37].summary
+          modify: x.stats.find(y=>y.shortDisplayName == 'L10').displayValue
         - name: STRK
           data: entries
-          modify: x.stats[14].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
+  ncaaf_settings:
+    card:
+      type: custom:flex-table-card
+      title: '[[title]]'
+      css:
+        table+: 'padding: 0px; width: 1600px;'
+        tbody tr td:first-child: 'width: 2%;'
+        tbody tr td:nth-child(2): 'width: 20%;'
+        tbody tr td:nth-child(n+3): 'width: 6%;'
+        tbody tr:hover: 'background-color: green!important; color:white!important;'
+      card_mod:
+        style:
+          .: |
+            ha-card {
+              overflow: auto;
+              }
+          $: |
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
+      sort_by: entries-
+      entities:
+        include: '[[entity]]'
+      columns:
+        - hidden: true
+          data: entries
+          modify: x.stats.find(y=>y.type == 'wins').displayValue
+        - name: C
+          data: entries
+          modify: >-
+            if(typeof x.stats.find(y=>y.type == 'clincher') !== 'undefined'
+            ){x.stats.find(y=>y.type == 'clincher').displayValue}else{'-'}
+        - name: Team
+          data: entries
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
+        - name: W-L
+          data: entries
+          modify: x.stats.find(y=>y.type == 'total').displayValue
+        - name: PCT
+          data: entries
+          modify: x.stats.find(y=>y.type == 'leaguewinpercent').displayValue
+        - name: Home
+          data: entries
+          modify: x.stats.find(y=>y.type == 'homerecord').displayValue
+        - name: Away
+          data: entries
+          modify: x.stats.find(y=>y.type == 'awayrecord').displayValue
+        - name: PF
+          data: entries
+          modify: x.stats.find(y=>y.type == 'pointsfor').displayValue
+        - name: PA
+          data: entries
+          modify: x.stats.find(y=>y.type == 'pointsagainst').displayValue
+        - name: STRK
+          data: entries
+          modify: x.stats.find(y=>y.type == 'streak').displayValue
   nfl_settings:
     card:
       type: custom:flex-table-card
@@ -185,7 +250,6 @@ decluttering_templates:
         tbody tr td:nth-child(2): 'width: 20%;'
         tbody tr td:nth-child(n+3): 'width: 6%;'
         tbody tr:hover: 'background-color: green!important; color:white!important;'
-        tbody tr td:nth-child(6): 'background-color: green; color: white;'
       card_mod:
         style:
           .: |
@@ -206,10 +270,10 @@ decluttering_templates:
       columns:
         - hidden: true
           data: entries
-          modify: x.stats[9].displayValue
-        - name: C
+          modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
+        - name: POS
           data: entries
-          modify: x.stats[0].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'SEED').displayValue
         - name: Team
           data: entries
           modify: >-
@@ -217,43 +281,46 @@ decluttering_templates:
             20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
         - name: GP
           data: entries
-          modify: x.stats[10].value + x.stats[3].value + x.stats[8].value
+          modify: >-
+            x.stats.find(y=>y.abbreviation == 'W').value +
+            x.stats.find(y=>y.abbreviation == 'L').value +
+            x.stats.find(y=>y.abbreviation == 'T').value
         - name: W
           data: entries
-          modify: x.stats[10].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
         - name: L
           data: entries
-          modify: x.stats[3].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
         - name: T
           data: entries
-          modify: x.stats[8].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'T').displayValue
         - name: PCT
           data: entries
-          modify: x.stats[9].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'PCT').displayValue
         - name: HOME
           data: entries
-          modify: x.stats[16].displayValue
+          modify: x.stats.find(y=>y.displayName == 'Home').displayValue
         - name: AWAY
           data: entries
-          modify: x.stats[17].displayValue
+          modify: x.stats.find(y=>y.displayName == 'Road').displayValue
         - name: DIV
           data: entries
-          modify: x.stats[18].displayValue
+          modify: x.stats.find(y=>y.displayName == 'DIV').displayValue
         - name: CONF
           data: entries
-          modify: x.stats[19].displayValue
+          modify: x.stats.find(y=>y.displayName == 'CONF').displayValue
         - name: PF
           data: entries
-          modify: x.stats[6].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'PF').displayValue
         - name: PA
           data: entries
-          modify: x.stats[5].displayValue
-        - name: DIFF
+          modify: x.stats.find(y=>y.abbreviation == 'PA').displayValue
+        - name: GB
           data: entries
-          modify: x.stats[1].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'GB').displayValue
         - name: STRK
           data: entries
-          modify: x.stats[7].displayValue
+          modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
   nba_settings:
     card:
       type: custom:flex-table-card
@@ -333,6 +400,68 @@ decluttering_templates:
         - name: L10
           data: entries
           modify: x.stats.find(y=>y.abbreviation == 'L10').displayValue
+  ncaam_settings:
+    card:
+      type: custom:flex-table-card
+      title: '[[title]]'
+      css:
+        table+: 'padding: 0px; width: 1600px;'
+        tbody tr td:first-child: 'width: 2%;'
+        tbody tr td:nth-child(2): 'width: 20%;'
+        tbody tr td:nth-child(n+3): 'width: 6%;'
+        tbody tr:hover: 'background-color: green!important; color:white!important;'
+      card_mod:
+        style:
+          .: |
+            ha-card {
+              overflow: auto;
+              }
+          $: |
+            .card-header {
+               padding-top: 6px!important;
+               padding-bottom: 4px!important;
+               font-size: 14px!important;
+               line-height: 14px!important;
+               font-weight: bold!important;
+             }
+      sort_by: entries-
+      entities:
+        include: '[[entity]]'
+      columns:
+        - hidden: true
+          data: entries
+          modify: x.stats.find(y=>y.type == 'wins').displayValue
+        - name: C
+          data: entries
+          modify: >-
+            if(typeof x.stats.find(y=>y.type == 'clincher') !== 'undefined'
+            ){x.stats.find(y=>y.type == 'clincher').displayValue}else{'-'}
+        - name: Team
+          data: entries
+          modify: >-
+            '<div><img src="' + x.team.logos[0].href + '" style="height:
+            20px;vertical-align:middle;">&nbsp;' + x.team.displayName + '</div>'
+        - name: W-L
+          data: entries
+          modify: x.stats.find(y=>y.type == 'total').displayValue
+        - name: PCT
+          data: entries
+          modify: x.stats.find(y=>y.type == 'leaguewinpercent').displayValue
+        - name: Home
+          data: entries
+          modify: x.stats.find(y=>y.type == 'home').displayValue
+        - name: Away
+          data: entries
+          modify: x.stats.find(y=>y.type == 'road').displayValue
+        - name: PF
+          data: entries
+          modify: x.stats.find(y=>y.type == 'pointsfor').displayValue
+        - name: PA
+          data: entries
+          modify: x.stats.find(y=>y.type == 'pointsagainst').displayValue
+        - name: STRK
+          data: entries
+          modify: x.stats.find(y=>y.type == 'streak').displayValue
   game_stats:
     card:
       type: custom:auto-entities
@@ -379,7 +508,7 @@ views:
                 border-top-right-radius: 20px;
                 border-style: solid;
                 overflow: hidden;
-                width: 25%;
+                width: 16.5%;
               }
               mwc-tab[active] {
                 background: #EBFFD8 !important;
@@ -662,16 +791,16 @@ views:
                                           - sensor.nhl_starting_goalies
                                       - sort: >-
                                           x.stats.find(y=>y.shortDisplayName ==
-                                          'PTS').value
+                                          'PTS').value                    
                     - attributes:
-                        label: Postgame
-                        icon: mdi:hockey-sticks
+                        label: Pregame
+                        icon: mdi:blood-bag
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NHL
-                          - status: POST
+                          - status: PRE
                     - attributes:
                         label: Live
                         icon: mdi:hockey-puck
@@ -682,14 +811,14 @@ views:
                           - sport: NHL
                           - status: IN
                     - attributes:
-                        label: Pregame
-                        icon: mdi:blood-bag
+                        label: Postgame
+                        icon: mdi:hockey-sticks
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NHL
-                          - status: PRE
+                          - status: POST
                     - attributes:
                         label: Starting Goalies
                         icon: mdi:strategy
@@ -815,6 +944,183 @@ views:
                           - name: GAA
                             data: data
                             modify: Number(x.awayGoalieGoalsAgainstAvg).toFixed(2)
+            - attributes:
+                label: NCAAF
+                icon: mdi:football
+              card:
+                type: custom:mod-card
+                card_mod:
+                  style:
+                    tabbed-card $: |
+                      mwc-tab {
+                        background: var(--ha-card-background, var(--card-background-color, white) );
+                        border-color: var(--ha-card-border-color, var(--divider-color, #e0e0e0) );
+                        border-width: 2px;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        border-style: solid;
+                        overflow: hidden;
+                        width: 25%;
+                      }
+                      mwc-tab[active] {
+                        background: #EBFFD8 !important;
+                      }
+                card:
+                  type: custom:tabbed-card
+                  styles:
+                    '--mdc-theme-primary': green
+                    '--mdc-tab-text-label-color-default': silver
+                    '--mdc-typography-button-font-size': 12px
+                  tabs:
+                    - attributes:
+                        label: Standings
+                        icon: mdi:ballot
+                      card:
+                        type: custom:mod-card
+                        card_mod:
+                          style:
+                            tabbed-card $: |
+                              mwc-tab {
+                                background: var(--ha-card-background, var(--card-background-color, white) );
+                                border-color: var(--ha-card-border-color, var(--divider-color, #e0e0e0) );
+                                border-width: 2px;
+                                border-top-left-radius: 20px;
+                                border-top-right-radius: 20px;
+                                border-style: solid;
+                                overflow: hidden;
+                                width: 25%;
+                              }
+                              mwc-tab[active] {
+                                background: #EBFFD8 !important;
+                              }
+                        card:
+                          type: custom:tabbed-card
+                          styles:
+                            '--mdc-theme-primary': green
+                            '--mdc-tab-text-label-color-default': silver
+                            '--mdc-typography-button-font-size': 12px
+                          tabs:
+                            - attributes:
+                                label: Conference
+                              card:
+                                type: custom:stack-in-card
+                                mode: vertical
+                                cards:
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF American Athletic Conference
+                                      - entity: >-
+                                          sensor.ncaaf_american_athletic_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Atlantic Coast Conference
+                                      - entity: sensor.ncaaf_atlantic_coast_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Big 12 Conference
+                                      - entity: sensor.ncaaf_big_12_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Big 10 East Conference
+                                      - entity: sensor.ncaaf_big_10_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Big 10 West Conference
+                                      - entity: sensor.ncaaf_big_10_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Conference USA
+                                      - entity: sensor.ncaaf_conference_usa
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF FBS Independents
+                                      - entity: sensor.ncaaf_fbs_independents
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Mid American East Conference
+                                      - entity: >-
+                                          sensor.ncaaf_mid_american_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Mid American West Conference
+                                      - entity: >-
+                                          sensor.ncaaf_mid_american_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Mountain West Conference
+                                      - entity: sensor.ncaaf_mountain_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF Pac-12 Conference
+                                      - entity: sensor.ncaaf_pac_12_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF SEC East Conference
+                                      - entity: sensor.ncaaf_sec_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF SEC West Conference
+                                      - entity: sensor.ncaaf_sec_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF SUN East Conference
+                                      - entity: sensor.ncaaf_sun_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaaf_settings
+                                    variables:
+                                      - title: NCAAF SUN West Conference
+                                      - entity: sensor.ncaaf_sun_west_conference
+                            - attributes:
+                                label: Overall
+                              card:
+                                type: markdown
+                                content: coming soon!
+                            - attributes:
+                                label: Playoffs
+                              card:
+                                type: markdown
+                                content: coming soon!
+                    - attributes:
+                        label: Pregame
+                        icon: mdi:strategy
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAF
+                          - status: PRE
+                    - attributes:
+                        label: Live
+                        icon: mdi:football
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAF
+                          - status: IN
+                    - attributes:
+                        label: Postgame
+                        icon: mdi:football-helmet
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAF
+                          - status: POST
             - attributes:
                 label: NFL
                 icon: mdi:football
@@ -947,14 +1253,14 @@ views:
                                 type: markdown
                                 content: coming soon!
                     - attributes:
-                        label: Postgame
-                        icon: mdi:football-helmet
+                        label: Pregame
+                        icon: mdi:strategy
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NFL
-                          - status: POST
+                          - status: PRE
                     - attributes:
                         label: Live
                         icon: mdi:football
@@ -965,14 +1271,14 @@ views:
                           - sport: NFL
                           - status: IN
                     - attributes:
-                        label: Pregame
-                        icon: mdi:strategy
+                        label: Postgame
+                        icon: mdi:football-helmet
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NFL
-                          - status: PRE
+                          - status: POST
             - attributes:
                 label: MLB
                 icon: mdi:baseball
@@ -1095,14 +1401,14 @@ views:
                                 type: markdown
                                 content: coming soon!
                     - attributes:
-                        label: Postgame
-                        icon: mdi:baseball
+                        label: Pregame
+                        icon: mdi:baseball-diamond
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: MLB
-                          - status: POST
+                          - status: PRE
                     - attributes:
                         label: Live
                         icon: mdi:baseball-bat
@@ -1113,14 +1419,279 @@ views:
                           - sport: MLB
                           - status: IN
                     - attributes:
-                        label: Pregame
-                        icon: mdi:baseball-diamond
+                        label: Postgame
+                        icon: mdi:baseball
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: MLB
+                          - status: POST
+            - attributes:
+                label: NCAAM
+                icon: mdi:basketball
+              card:
+                type: custom:mod-card
+                card_mod:
+                  style:
+                    tabbed-card $: |
+                      mwc-tab {
+                        background: var(--ha-card-background, var(--card-background-color, white) );
+                        border-color: var(--ha-card-border-color, var(--divider-color, #e0e0e0) );
+                        border-width: 2px;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        border-style: solid;
+                        overflow: hidden;
+                        width: 25%;
+                      }
+                      mwc-tab[active] {
+                        background: #EBFFD8 !important;
+                      }
+                card:
+                  type: custom:tabbed-card
+                  styles:
+                    '--mdc-theme-primary': green
+                    '--mdc-tab-text-label-color-default': silver
+                    '--mdc-typography-button-font-size': 12px
+                  tabs:
+                    - attributes:
+                        label: Standings
+                        icon: mdi:ballot
+                      card:
+                        type: custom:mod-card
+                        card_mod:
+                          style:
+                            tabbed-card $: |
+                              mwc-tab {
+                                background: var(--ha-card-background, var(--card-background-color, white) );
+                                border-color: var(--ha-card-border-color, var(--divider-color, #e0e0e0) );
+                                border-width: 2px;
+                                border-top-left-radius: 20px;
+                                border-top-right-radius: 20px;
+                                border-style: solid;
+                                overflow: hidden;
+                                width: 25%;
+                              }
+                              mwc-tab[active] {
+                                background: #EBFFD8 !important;
+                              }
+                        card:
+                          type: custom:tabbed-card
+                          styles:
+                            '--mdc-theme-primary': green
+                            '--mdc-tab-text-label-color-default': silver
+                            '--mdc-typography-button-font-size': 12px
+                          tabs:
+                            - attributes:
+                                label: Conference
+                              card:
+                                type: custom:stack-in-card
+                                mode: vertical
+                                cards:
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM ASUN Conference
+                                      - entity: sensor.ncaam_asun_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM America East Conference
+                                      - entity: sensor.ncaam_america_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM American Athletic Conference
+                                      - entity: >-
+                                          sensor.ncaam_american_athletic_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Atlantic 10 Conference
+                                      - entity: sensor.ncaam_atlantic_10_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Atlantic Coast Conference
+                                      - entity: sensor.ncaam_atlantic_coast_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big 12 Conference
+                                      - entity: sensor.ncaam_big_12_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big East Conference
+                                      - entity: sensor.ncaam_big_east_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big Sky Conference
+                                      - entity: sensor.ncaam_big_sky_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big South Conference
+                                      - entity: sensor.ncaam_big_south_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big Ten Conference
+                                      - entity: sensor.ncaam_big_ten_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Big West Conference
+                                      - entity: sensor.ncaam_big_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Coastal Athletic Association
+                                      - entity: >-
+                                          sensor.ncaam_coastal_athletic_association
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Conference USA
+                                      - entity: sensor.ncaam_conference_usa
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Division I Independents Conference
+                                      - entity: >-
+                                          sensor.ncaam_division_i_independents_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Horizon League
+                                      - entity: sensor.ncaam_horizon_league
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Ivy League
+                                      - entity: sensor.ncaam_ivy_league
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Metro Atlantic Athletic Conference
+                                      - entity: >-
+                                          sensor.ncaam_metro_atlantic_athletic_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Mid-American Conference
+                                      - entity: sensor.ncaam_mid_american_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Mid-Eastern Athletic Conference
+                                      - entity: >-
+                                          sensor.ncaam_mid_eastern_athletic_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Missouri Valley Conference
+                                      - entity: sensor.ncaam_missouri_valley_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Mountain West Conference
+                                      - entity: sensor.ncaam_mountain_west_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Northeast Conference
+                                      - entity: sensor.ncaam_northeast_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Ohio Valley Conference
+                                      - entity: sensor.ncaam_ohio_valley_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Pac-12 Conference
+                                      - entity: sensor.ncaam_pac_12_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Patriot League
+                                      - entity: sensor.ncaam_patriot_league
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Southeastern Conference
+                                      - entity: sensor.ncaam_southeastern_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Southern Conference
+                                      - entity: sensor.ncaam_southern_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Southland Conference
+                                      - entity: sensor.ncaam_southland_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Southwestern Athletic Conference
+                                      - entity: >-
+                                          sensor.ncaam_southwestern_athletic_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Summit League
+                                      - entity: sensor.ncaam_summit_league
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM Sun Belt Conference
+                                      - entity: sensor.ncaam_sun_belt_conference
+                                  - type: custom:decluttering-card
+                                    template: ncaam_settings
+                                    variables:
+                                      - title: NCAAM West Coast Conference
+                                      - entity: sensor.ncaam_west_coast_conference
+                            - attributes:
+                                label: Overall
+                              card:
+                                type: markdown
+                                content: coming soon!
+                            - attributes:
+                                label: Playoffs
+                              card:
+                                type: markdown
+                                content: coming soon!
+                    - attributes:
+                        label: Pregame
+                        icon: mdi:account-details
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAM
                           - status: PRE
+                    - attributes:
+                        label: Live
+                        icon: mdi:basketball-hoop
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAM
+                          - status: IN
+                    - attributes:
+                        label: Postgame
+                        icon: mdi:basketball
+                      card:
+                        type: custom:decluttering-card
+                        template: game_stats
+                        variables:
+                          - sport: NCAAM
+                          - status: POST
             - attributes:
                 label: NBA
                 icon: mdi:basketball
@@ -1270,14 +1841,14 @@ views:
                                 type: markdown
                                 content: coming soon!
                     - attributes:
-                        label: Postgame
-                        icon: mdi:basketball
+                        label: Pregame
+                        icon: mdi:account-details
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NBA
-                          - status: POST
+                          - status: PRE
                     - attributes:
                         label: Live
                         icon: mdi:basketball-hoop
@@ -1288,12 +1859,11 @@ views:
                           - sport: NBA
                           - status: IN
                     - attributes:
-                        label: Pregame
-                        icon: mdi:account-details
+                        label: Postgame
+                        icon: mdi:basketball
                       card:
                         type: custom:decluttering-card
                         template: game_stats
                         variables:
                           - sport: NBA
-                          - status: PRE
-title: Sports Standings and Scores
+                          - status: POST

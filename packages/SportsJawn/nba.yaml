@@ -1,0 +1,167 @@
+## NBA Standings ##
+rest:
+  - resource: https://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?seasontype=2&type=0&level=3
+    scan_interval: 36000
+    sensor:
+      name: NBA Standings
+      unique_id: sensor.nba_standings
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+## NBA Teams ##
+sensor:
+  - platform: teamtracker
+    league_id: NBA
+    team_id: TOR
+    name: Toronto Raptors
+  - platform: teamtracker
+    league_id: NBA
+    team_id: BKN
+    name: Brooklyn Nets
+  - platform: teamtracker
+    league_id: NBA
+    team_id: NY
+    name: New York Knicks
+  - platform: teamtracker
+    league_id: NBA
+    team_id: PHI
+    name: Philadelphia 76ers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: BOS
+    name: Boston Celtics
+  - platform: teamtracker
+    league_id: NBA
+    team_id: DET
+    name: Detroit Pistons
+  - platform: teamtracker
+    league_id: NBA
+    team_id: IND
+    name: Indiana Pacers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: CHI
+    name: Chicago Bulls
+  - platform: teamtracker
+    league_id: NBA
+    team_id: CLE
+    name: Cleveland Cavaliers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: MIL
+    name: Milwaukee Bucks
+  - platform: teamtracker
+    league_id: NBA
+    team_id: CHA
+    name: Charlotte Hornets
+  - platform: teamtracker
+    league_id: NBA
+    team_id: ORL
+    name: Orlando Magic
+  - platform: teamtracker
+    league_id: NBA
+    team_id: WSH
+    name: Washington Wizards
+  - platform: teamtracker
+    league_id: NBA
+    team_id: ATL
+    name: Atlanta Hawks
+  - platform: teamtracker
+    league_id: NBA
+    team_id: MIA
+    name: Miami Heat
+  - platform: teamtracker
+    league_id: NBA
+    team_id: UTAH
+    name: Utah Jazz
+  - platform: teamtracker
+    league_id: NBA
+    team_id: OKC
+    name: Oklahoma City Thunder
+  - platform: teamtracker
+    league_id: NBA
+    team_id: POR
+    name: Portland Trail Blazers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: MIN
+    name: Minnesota Timberwolves
+  - platform: teamtracker
+    league_id: NBA
+    team_id: DEN
+    name: Denver Nuggets
+  - platform: teamtracker
+    league_id: NBA
+    team_id: LAL
+    name: Los Angeles Lakers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: LAC
+    name: LA Clippers
+  - platform: teamtracker
+    league_id: NBA
+    team_id: GS
+    name: Golden State Warriors
+  - platform: teamtracker
+    league_id: NBA
+    team_id: PHX
+    name: Phoenix Suns
+  - platform: teamtracker
+    league_id: NBA
+    team_id: SAC
+    name: Sacramento Kings
+  - platform: teamtracker
+    league_id: NBA
+    team_id: HOU
+    name: Houston Rockets
+  - platform: teamtracker
+    league_id: NBA
+    team_id: SA
+    name: San Antonio Spurs
+  - platform: teamtracker
+    league_id: NBA
+    team_id: NO
+    name: New Orleans Pelicans
+  - platform: teamtracker
+    league_id: NBA
+    team_id: DAL
+    name: Dallas Mavericks
+  - platform: teamtracker
+    league_id: NBA
+    team_id: MEM
+    name: Memphis Grizzlies
+
+### NBA Divisions ###
+template:
+  - sensor: 
+    - name: NBA Eastern Atlantic
+      unique_id: sensor.nba_eastern_atlantic
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][0]['standings']['entries'] }}"
+    - name: NBA Eastern Central
+      unique_id: sensor.nba_eastern_central
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][1]['standings']['entries'] }}"
+    - name: NBA Eastern Southeast
+      unique_id: sensor.nba_eastern_southeast
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[0]['children'][2]['standings']['entries'] }}"
+    - name: NBA Western Northwest
+      unique_id: sensor.nba_western_northwest
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][0]['standings']['entries'] }}"
+    - name: NBA Western Pacific
+      unique_id: sensor.nba_western_pacific
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][1]['standings']['entries'] }}"
+    - name: NBA Western Southwest
+      unique_id: sensor.nba_western_southwest
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nba_standings','children')[1]['children'][2]['standings']['entries'] }}"

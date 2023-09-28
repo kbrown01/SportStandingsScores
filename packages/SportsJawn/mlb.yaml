@@ -1,0 +1,167 @@
+## MLB Standings ##
+rest:
+  - resource: https://site.web.api.espn.com/apis/v2/sports/baseball/mlb/standings?seasontype=2&type=0&level=3
+    scan_interval: 36000
+    sensor:
+      name: MLB Standings
+      unique_id: sensor.mlb_standings
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+## MLB Teams ##
+sensor:
+  - platform: teamtracker
+    league_id: MLB
+    team_id: LAA
+    name: Los Angeles Angels
+  - platform: teamtracker
+    league_id: MLB
+    team_id: CHW
+    name: Chicago White Sox
+  - platform: teamtracker
+    league_id: MLB
+    team_id: CLE
+    name: Cleveland Guardians
+  - platform: teamtracker
+    league_id: MLB
+    team_id: KC
+    name: Kansas City Royals
+  - platform: teamtracker
+    league_id: MLB
+    team_id: MIL
+    name: Milwaukee Brewers
+  - platform: teamtracker
+    league_id: MLB
+    team_id: OAK
+    name: Oakland Athletics
+  - platform: teamtracker
+    league_id: MLB
+    team_id: SEA
+    name: Seattle Mariners
+  - platform: teamtracker
+    league_id: MLB
+    team_id: TEX
+    name: Texas Rangers
+  - platform: teamtracker
+    league_id: MLB
+    team_id: CHC
+    name: Chicago Cubs
+  - platform: teamtracker
+    league_id: MLB
+    team_id: CIN
+    name: Cincinnati Reds
+  - platform: teamtracker
+    league_id: MLB
+    team_id: LAD
+    name: Los Angeles Dodgers
+  - platform: teamtracker
+    league_id: MLB
+    team_id: SD
+    name: San Diego Padres
+  - platform: teamtracker
+    league_id: MLB
+    team_id: SF
+    name: San Francisco Giants
+  - platform: teamtracker
+    league_id: MLB
+    team_id: COL
+    name: Colorado Rockies
+  - platform: teamtracker
+    league_id: MLB
+    team_id: ARI
+    name: Arizona Diamondbacks
+  - platform: teamtracker
+    league_id: MLB
+    team_id: BAL
+    name: Baltimore Orioles
+  - platform: teamtracker
+    league_id: MLB
+    team_id: BOS
+    name: Boston Red Sox
+  - platform: teamtracker
+    league_id: MLB
+    team_id: DET
+    name: Detroit Tigers
+  - platform: teamtracker
+    league_id: MLB
+    team_id: MIN
+    name: Minnesota Twins
+  - platform: teamtracker
+    league_id: MLB
+    team_id: NYY
+    name: New York Yankees
+  - platform: teamtracker
+    league_id: MLB
+    team_id: TOR
+    name: Toronto Blue Jays
+  - platform: teamtracker
+    league_id: MLB
+    team_id: ATL
+    name: Atlanta Braves
+  - platform: teamtracker
+    league_id: MLB
+    team_id: HOU
+    name: Houston Astros
+  - platform: teamtracker
+    league_id: MLB
+    team_id: WSH
+    name: Washington Nationals
+  - platform: teamtracker
+    league_id: MLB
+    team_id: NYM
+    name: New York Mets
+  - platform: teamtracker
+    league_id: MLB
+    team_id: PHI
+    name: Philadelphia Phillies
+  - platform: teamtracker
+    league_id: MLB
+    team_id: PIT
+    name: Pittsburgh Pirates
+  - platform: teamtracker
+    league_id: MLB
+    team_id: STL
+    name: St. Louis Cardinals
+  - platform: teamtracker
+    league_id: MLB
+    team_id: MIA
+    name: Miami Marlins
+  - platform: teamtracker
+    league_id: MLB
+    team_id: TB
+    name: Tampa Bay Rays
+
+## MLB Divisions ##
+template:
+  - sensor:
+    - name: "MLB American East"
+      unique_id: sensor.mlb_american_east
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][0]['standings']['entries'] }}"
+    - name: MLB American Central
+      unique_id: sensor.mlb_american_central
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][1]['standings']['entries'] }}"
+    - name: MLB American West
+      unique_id: sensor.mlb_american_west
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[0]['children'][2]['standings']['entries'] }}"
+    - name: MLB National East
+      unique_id: sensor.mlb_national_east
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][0]['standings']['entries'] }}"
+    - name: MLB National Central
+      unique_id: sensor.mlb_national_central
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][1]['standings']['entries'] }}"
+    - name: MLB National West
+      unique_id: sensor.mlb_national_west
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.mlb_standings','children')[1]['children'][2]['standings']['entries'] }}"

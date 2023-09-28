@@ -1,0 +1,175 @@
+rest:
+## NHL Standings ##
+  - resource: https://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?seasontype=2&type=0&level=3
+    scan_interval: 36000
+    sensor:
+      name: NHL Standings
+      unique_id: sensor.nhl_standings
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+## NHL Wildcard ##
+  - resource: https://site.web.api.espn.com/apis/v2/sports/hockey/nhl/standings?region=us&lang=en&contentorigin=espn&type=3&level=2&sort=playoffseed%3Aasc%2Cpoints%3Adesc%2Cgamesplayed%3Aasc%2Crotwins%3Adesc&seasontype=2
+    scan_interval: 36000
+    sensor:
+      name: NHL Wildcard
+      unique_id: sensor.nhl_wildcard
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+## NHL Teams ##
+sensor:
+  - platform: teamtracker
+    league_id: NHL
+    team_id: DET
+    name: Detroit Red Wings
+  - platform: teamtracker
+    league_id: NHL
+    team_id: NSH
+    name: Nashville Predators
+  - platform: teamtracker
+    league_id: NHL
+    team_id: FLA
+    name: Florida Panthers
+  - platform: teamtracker
+    league_id: NHL
+    team_id: STL
+    name: St Louis Blues
+  - platform: teamtracker
+    league_id: NHL
+    team_id: COL
+    name: Colorado Avalanche
+  - platform: teamtracker
+    league_id: NHL
+    team_id: BOS
+    name: Boston Bruins
+  - platform: teamtracker
+    league_id: NHL
+    team_id: NYI
+    name: New York Islanders
+  - platform: teamtracker
+    league_id: NHL
+    team_id: PIT
+    name: Pittsburg Penguins
+  - platform: teamtracker
+    league_id: NHL
+    team_id: NJ
+    name: New Jersey Devils
+  - platform: teamtracker
+    league_id: NHL
+    team_id: DAL
+    name: Dallas Stars
+  - platform: teamtracker
+    league_id: NHL
+    team_id: CBJ
+    name: Columbus Blue Jackets
+  - platform: teamtracker
+    league_id: NHL
+    team_id: TOR
+    name: Toronto Maple Leafs
+  - platform: teamtracker
+    league_id: NHL
+    team_id: MTL
+    name: Montreal Canadians
+  - platform: teamtracker
+    league_id: NHL
+    team_id: CAR
+    name: Carolina Hurricanes
+  - platform: teamtracker
+    league_id: NHL
+    team_id: WSH
+    name: Washington Senators
+  - platform: teamtracker
+    league_id: NHL
+    team_id: CGY
+    name: Calgary Flames
+  - platform: teamtracker
+    league_id: NHL
+    team_id: NYR
+    name: New York Rangers
+  - platform: teamtracker
+    league_id: NHL
+    team_id: VAN
+    name: Vancouver Canucks
+  - platform: teamtracker
+    league_id: NHL
+    team_id: PHI
+    name: Philadelphia Fylers
+  - platform: teamtracker
+    league_id: NHL
+    team_id: LA
+    name: Los Angeles Kings
+  - platform: teamtracker
+    league_id: NHL
+    team_id: ARI
+    name: Arizona Coyotes
+  - platform: teamtracker
+    league_id: NHL
+    team_id: SJ
+    name: San Jose Sharks
+  - platform: teamtracker
+    league_id: NHL
+    team_id: BUF
+    name: Buffalo Sabres
+  - platform: teamtracker
+    league_id: NHL
+    team_id: SEA
+    name: Seattle Kraken
+  - platform: teamtracker
+    league_id: NHL
+    team_id: VGK
+    name: Los Vegas Golden Knights
+  - platform: teamtracker
+    league_id: NHL
+    team_id: TB
+    name: Tampa Bay Lightning
+  - platform: teamtracker
+    league_id: NHL
+    team_id: OTT
+    name: Ottawa Senators
+  - platform: teamtracker
+    league_id: NHL
+    team_id: WPG
+    name: Winnipeg Jets
+  - platform: teamtracker
+    league_id: NHL
+    team_id: EDM
+    name: Edmonton Oilers
+  - platform: teamtracker
+    league_id: NHL
+    team_id: MIN
+    name: Minnesota Wild
+  - platform: teamtracker
+    league_id: NHL
+    team_id: ANA
+    name: Anaheim Ducks
+  - platform: teamtracker
+    league_id: NHL
+    team_id: CHI
+    name: Chicago Blackhawks
+
+### NHL Divisions ###
+template:
+  - sensor: 
+    - name: NHL East Atlantic
+      unique_id: sensor.nhl_east_atlantic
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nhl_standings','children')[0]['children'][0]['standings']['entries'] }}"
+    - name: NHL East Metropolitan
+      unique_id: sensor.nhl_east_metropolitan
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nhl_standings','children')[0]['children'][1]['standings']['entries'] }}"
+    - name: NHL West Central
+      unique_id: sensor.nhl_west_central
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nhl_standings','children')[1]['children'][0]['standings']['entries'] }}"
+    - name: NHL West Pacific
+      unique_id: sensor.nhl_west_pacific
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nhl_standings','children')[1]['children'][1]['standings']['entries'] }}"

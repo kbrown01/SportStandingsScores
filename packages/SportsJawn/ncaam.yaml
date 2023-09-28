@@ -1,0 +1,1662 @@
+### NCAAM Standings ###
+rest:
+  - resource: https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?seasontype=2&type=0&level=3
+    scan_interval: 36000
+    sensor:
+      name: NCAAM Standings
+      unique_id: sensor.ncaam_standings
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+### NCAAM Teams ###
+sensor:
+  ### ASUN Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: APSU
+    name: Austin Peay Governors
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CARK
+    name: Central Arkansas Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: JAX
+    name: Jacksonville Dolphins
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: JVST
+    name: Jacksonville State Gamecocks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: QUOC
+    name: Queens University Royals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FGCU
+    name: Florida Gulf Coast Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BELL
+    name: Bellarmine Knights
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNF
+    name: North Florida Ospreys
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNA
+    name: North Alabama Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LIP
+    name: Lipscomb Bisons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: EKU
+    name: Eastern Kentucky Colonels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: STET
+    name: Stetson Hatters
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: KENN
+    name: Kennesaw State Owls
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LIB
+    name: Liberty Flames
+  ### America East Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ALB
+    name: UAlbany Great Danes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NJIT
+    name: NJIT Highlanders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ME
+    name: Maine Black Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BRY
+    name: Bryant Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UMBC
+    name: UMBC Retrievers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BING
+    name: Binghamton Bearcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNH
+    name: New Hampshire Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UML
+    name: UMass Lowell River Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UVM
+    name: Vermont Catamounts
+  ### American Athletic Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TLSA
+    name: Tulsa Golden Hurricane
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SMU
+    name: SMU Mustangs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ECU
+    name: East Carolina Pirates
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USF
+    name: South Florida Bulls
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCF
+    name: UCF Knights
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WICH
+    name: Wichita State Shockers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TEM
+    name: Temple Owls
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CIN
+    name: Cincinnati Bearcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TULN
+    name: Tulane Green Wave
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MEM
+    name: Memphis Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HOU
+    name: Houston Cougars
+  ### Atlantic 10 ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LUC
+    name: Loyola Chicago Ramblers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: URI
+    name: Rhode Island Rams
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MASS
+    name: Massachusetts Minutemen
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RICH
+    name: Richmond Spiders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LAS
+    name: La Salle Explorers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DAV
+    name: Davidson Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: JOES
+    name: Saint Joseph's Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SBU
+    name: St. Bonaventure Bonnies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DUQ
+    name: Duquesne Dukes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GW
+    name: George Washington Revolutionaries
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GMU
+    name: George Mason Patriots
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FOR
+    name: Fordham Rams
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DAY
+    name: Dayton Flyers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SLU
+    name: Saint Louis Billikens
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VCU
+    name: VCU Rams
+  ### Atlantic Coast Conference ##
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LOU
+    name: Louisville Cardinals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ND
+    name: Notre Dame Fighting Irish
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GT
+    name: Georgia Tech Yellow Jackets
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FSU
+    name: Florida State Seminoles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VT
+    name: Virginia Tech Hokies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BC
+    name: Boston College Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WAKE
+    name: Wake Forest Demon Deacons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SYR
+    name: Syracuse Orange
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNC
+    name: North Carolina Tar Heels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NCSU
+    name: NC State Wolfpack
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DUKE
+    name: Duke Blue Devils
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CLEM
+    name: Clemson Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PITT
+    name: Pittsburgh Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MIA
+    name: Miami Hurricanes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UVA
+    name: Virginia Cavaliers
+  ### Big 12 Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TTU
+    name: Texas Tech Red Raiders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OU
+    name: Oklahoma Sooners
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WVU
+    name: West Virginia Mountaineers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OKST
+    name: Oklahoma State Cowboys
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TCU
+    name: TCU Horned Frogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ISU
+    name: Iowa State Cyclones
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: KSU
+    name: Kansas State Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BAY
+    name: Baylor Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TEX
+    name: Texas Longhorns
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: KU
+    name: Kansas Jayhawks
+  ### Big East Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GTWN
+    name: Georgetown Hoyas
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DEP
+    name: DePaul Blue Demons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BUT
+    name: Butler Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SJU
+    name: St. John's Red Storm
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HALL
+    name: Seton Hall Pirates
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VILL
+    name: Villanova Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CONN
+    name: UConn Huskies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PROV
+    name: Providence Friars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CREI
+    name: Creighton Bluejays
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: XAV
+    name: Xavier Musketeers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MARQ
+    name: Marquette Golden Eagles
+  ### Big Sky Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IDHO
+    name: Idaho Vandals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NAU
+    name: Northern Arizona Lumberjacks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNCO
+    name: Northern Colorado Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PRST
+    name: Portland State Vikings
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SAC
+    name: Sacramento State Hornets
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IDST
+    name: Idaho State Bengals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MONT
+    name: Montana Grizzlies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WEB
+    name: Weber State Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MTST
+    name: Montana State Bobcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: EWU
+    name: Eastern Washington Eagles
+  ### Big South Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PRE
+    name: Presbyterian Blue Hose
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CHSO
+    name: Charleston Southern Buccaneers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HPU
+    name: High Point Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CAMP
+    name: Campbell Fighting Camels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UPST
+    name: South Carolina Upstate Spartans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WEBB
+    name: Gardner-Webb Runnin' Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WIN
+    name: Winthrop Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LONG
+    name: Longwood Lancers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RAD
+    name: Radford Highlanders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNCA
+    name: UNC Asheville Bulldogs
+  ### Big Ten Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MINN
+    name: Minnesota Golden Gophers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OSU
+    name: Ohio State Buckeyes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WIS
+    name: Wisconsin Badgers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NEB
+    name: Nebraska Cornhuskers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PSU
+    name: Penn State Nittany Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RUTG
+    name: Rutgers Scarlet Knights
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MD
+    name: Maryland Terrapins
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ILL
+    name: Illinois Fighting Illini
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IOWA
+    name: Iowa Hawkeyes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MICH
+    name: Michigan Wolverines
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MSU
+    name: Michigan State Spartans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IU
+    name: Indiana Hoosiers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NU
+    name: Northwestern Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PUR
+    name: Purdue Boilermakers
+  ### Big West Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CP
+    name: Cal Poly Mustangs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CSUN
+    name: Cal State Northridge Matadors
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CSUB
+    name: Cal State Bakersfield Roadrunners
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCSD
+    name: UC San Diego Tritons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LBSU
+    name: Long Beach State Beach
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCD
+    name: UC Davis Aggies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HAW
+    name: Hawai'i Rainbow Warriors
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CSUF
+    name: Cal State Fullerton Titans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCR
+    name: UC Riverside Highlanders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCSB
+    name: UC Santa Barbara Gauchos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCI
+    name: UC Irvine Anteaters
+  ### Coastal Athletic Association ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HAMP
+    name: Hampton Pirates
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MONM
+    name: Monmouth Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: STON
+    name: Stony Brook Seawolves
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NE
+    name: Northeastern Huskies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ELON
+    name: Elon Phoenix
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: W&amp;M
+    name: William &amp; Mary Tribe
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DEL
+    name: Delaware Blue Hens
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NCAT
+    name: North Carolina A&amp;T Aggies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DREX
+    name: Drexel Dragons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNCW
+    name: UNC Wilmington Seahawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TOW
+    name: Towson Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COFC
+    name: Charleston Cougars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HOF
+    name: Hofstra Pride
+  ### Conference USA ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTSA
+    name: UTSA Roadrunners
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LT
+    name: Louisiana Tech Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTEP
+    name: UTEP Miners
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RICE
+    name: Rice Owls
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WKU
+    name: Western Kentucky Hilltoppers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FIU
+    name: Florida International Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CHAR
+    name: Charlotte 49ers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MTSU
+    name: Middle Tennessee Blue Raiders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UAB
+    name: UAB Blazers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNT
+    name: North Texas Mean Green
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FAU
+    name: Florida Atlantic Owls
+  ### Division I Independents ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CHST
+    name: Chicago State Cougars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HART
+    name: Hartford Hawks
+  ### Horizon League ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IUPU
+    name: IUPUI Jaguars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GB
+    name: Green Bay Phoenix
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PFW
+    name: Purdue Fort Wayne Mastodons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DETM
+    name: Detroit Mercy Titans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WRST
+    name: Wright State Raiders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RMU
+    name: Robert Morris Colonials
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OAK
+    name: Oakland Golden Grizzlies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MILW
+    name: Milwaukee Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NKU
+    name: Northern Kentucky Norse
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CLEV
+    name: Cleveland State Vikings
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: YSU
+    name: Youngstown State Penguins
+  ### Ivy League ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COLU
+    name: Columbia Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HARV
+    name: Harvard Crimson
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DART
+    name: Dartmouth Big Green
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COR
+    name: Cornell Big Red
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BRWN
+    name: Brown Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PENN
+    name: Pennsylvania Quakers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PRIN
+    name: Princeton Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: YALE
+    name: Yale Bulldogs
+  ### Metro Atlantic Athletic Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MRST
+    name: Marist Red Foxes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SPU
+    name: Saint Peter's Peacocks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MSM
+    name: Mount St. Mary's Mountaineers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CAN
+    name: Canisius Golden Griffins
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FAIR
+    name: Fairfield Stags
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NIA
+    name: Niagara Purple Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MAN
+    name: Manhattan Jaspers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: QUIN
+    name: Quinnipiac Bobcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SIE
+    name: Siena Saints
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: RID
+    name: Rider Broncs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: IONA
+    name: Iona Gaels
+  ### Mid-American Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WMU
+    name: Western Michigan Broncos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BGSU
+    name: Bowling Green Falcons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CMU
+    name: Central Michigan Chippewas
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: EMU
+    name: Eastern Michigan Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: M-OH
+    name: Miami (OH) Redhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BUFF
+    name: Buffalo Bulls
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NIU
+    name: Northern Illinois Huskies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OHIO
+    name: Ohio Bobcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BALL
+    name: Ball State Cardinals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AKR
+    name: Akron Zips
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: KENT
+    name: Kent State Golden Flashes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TOL
+    name: Toledo Rockets
+  ### Mid-Eastern Athletic Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SCST
+    name: South Carolina State Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COPP
+    name: Coppin State Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DSU
+    name: Delaware State Hornets
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MORG
+    name: Morgan State Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NORF
+    name: Norfolk State Spartans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UMES
+    name: Maryland-Eastern Shore Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NCCU
+    name: North Carolina Central Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HOW
+    name: Howard Bison
+  ### Missouri Valley Conference 
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: EVAN
+    name: Evansville Purple Aces
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UIC
+    name: UIC Flames
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VAL
+    name: Valparaiso Beacons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ILST
+    name: Illinois State Redbirds
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNI
+    name: Northern Iowa Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MUR
+    name: Murray State Racers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MOST
+    name: Missouri State Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: INST
+    name: Indiana State Sycamores
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SIU
+    name: Southern Illinois Salukis
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BEL
+    name: Belmont Bruins
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DRKE
+    name: Drake Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BRAD
+    name: Bradley Braves
+  ### Mountain West Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WYO
+    name: Wyoming Cowboys
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AFA
+    name: Air Force Falcons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CSU
+    name: Colorado State Rams
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FRES
+    name: Fresno State Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNLV
+    name: UNLV Rebels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNM
+    name: New Mexico Lobos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SJSU
+    name: San José State Spartans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NEV
+    name: Nevada Wolf Pack
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USU
+    name: Utah State Aggies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BOIS
+    name: Boise State Broncos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SDSU
+    name: San Diego State Aztecs
+  ### Northeast Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LIU
+    name: Long Island University Sharks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SFNY
+    name: St. Francis Brooklyn Terriers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CCSU
+    name: Central Connecticut Blue Devils
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WAG
+    name: Wagner Seahawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SHU
+    name: Sacred Heart Pioneers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SFPA
+    name: St. Francis (PA) Red Flash
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FDU
+    name: Fairleigh Dickinson Knights
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: STO
+    name: Stonehill Skyhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MRMK
+    name: Merrimack Warriors
+  ### Ohio Valley Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: EIU
+    name: Eastern Illinois Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LIN
+    name: Lindenwood Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UALR
+    name: Little Rock Trojans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SIUE
+    name: SIU Edwardsville Cougars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SOUIND
+    name: Southern Indiana Screaming Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTM
+    name: UT Martin Skyhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TNST
+    name: Tennessee State Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SEMO
+    name: Southeast Missouri State Redhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TNTC
+    name: Tennessee Tech Golden Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MORE
+    name: Morehead State Eagles
+  ### Pac-12 COnference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CAL
+    name: California Golden Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ORST
+    name: Oregon State Beavers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: STAN
+    name: Stanford Cardinal
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COLO
+    name: Colorado Buffaloes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WASH
+    name: Washington Huskies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTAH
+    name: Utah Utes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ASU
+    name: Arizona State Sun Devils
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WSU
+    name: Washington State Cougars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ORE
+    name: Oregon Ducks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ARIZ
+    name: Arizona Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USC
+    name: USC Trojans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UCLA
+    name: UCLA Bruins
+  ### Patriot League ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BUCK
+    name: Bucknell Bison
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AMER
+    name: American University Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: L-MD
+    name: Loyola Maryland Greyhounds
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LAF
+    name: Lafayette Leopards
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HC
+    name: Holy Cross Crusaders
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BU
+    name: Boston University Terriers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ARMY
+    name: Army Black Knights
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NAVY
+    name: Navy Midshipmen
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LEH
+    name: Lehigh Mountain Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: COLG
+    name: Colgate Raiders
+  ### Southeastern Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LSU
+    name: LSU Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MISS
+    name: Ole Miss Rebels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SC
+    name: South Carolina Gamecocks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UGA
+    name: Georgia Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MSST
+    name: Mississippi State Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ARK
+    name: Arkansas Razorbacks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FLA
+    name: Florida Gators
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AUB
+    name: Auburn Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MIZ
+    name: Missouri Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TENN
+    name: Tennessee Volunteers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VAN
+    name: Vanderbilt Commodores
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UK
+    name: Kentucky Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TA&amp;M
+    name: Texas A&amp;M Aggies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ALA
+    name: Alabama Crimson Tide
+  ### Southern Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: VMI
+    name: VMI Keydets
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CIT
+    name: The Citadel Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MER
+    name: Mercer Bears
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTC
+    name: Chattanooga Mocs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WOF
+    name: Wofford Terriers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ETSU
+    name: East Tennessee State Buccaneers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WCU
+    name: Western Carolina Catamounts
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNCG
+    name: UNC Greensboro Spartans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FUR
+    name: Furman Paladins
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SAM
+    name: Samford Bulldogs
+  ### Southland Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LAM
+    name: Lamar Cardinals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UIW
+    name: Incarnate Word Cardinals
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MCN
+    name: McNeese Cowboys
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UNO
+    name: New Orleans Privateers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: HCU
+    name: Houston Christian Huskies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TAMC
+    name: Texas A&amp;M-Commerce Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NICH
+    name: Nicholls Colonels
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SELA
+    name: SE Louisiana Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NWST
+    name: Northwestern State Demons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AMCC
+    name: Texas A&amp;M-Corpus Christi Islanders
+  ### Southwestern Athletic Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MVSU
+    name: Mississippi Valley State Delta Devils
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: FAMU
+    name: Florida A&amp;M Rattlers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UAPB
+    name: Arkansas-Pine Bluff Golden Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ALST
+    name: Alabama State Hornets
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TXSO
+    name: Texas Southern Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BCU
+    name: Bethune-Cookman Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PV
+    name: Prairie View A&amp;M Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: AAMU
+    name: Alabama A&amp;M Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SOU
+    name: Southern Jaguars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: JKST
+    name: Jackson State Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GRAM
+    name: Grambling Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ALCN
+    name: Alcorn State Braves
+  ### Summit League ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: OMA
+    name: Omaha Mavericks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: DEN
+    name: Denver Pioneers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UND
+    name: North Dakota Fighting Hawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SDAK
+    name: South Dakota Coyotes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: KC
+    name: Kansas City Roos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: STTHOMASMN
+    name: St. Thomas-Minnesota Tommies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: WIU
+    name: Western Illinois Leathernecks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NDSU
+    name: North Dakota State Bison
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SDST
+    name: South Dakota State Jackrabbits
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ORU
+    name: Oral Roberts Golden Eagles
+  ### Sun Belt Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GAST
+    name: Georgia State Panthers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ARST
+    name: Arkansas State Red Wolves
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CCU
+    name: Coastal Carolina Chanticleers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TXST
+    name: Texas State Bobcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ULM
+    name: UL Monroe Warhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USA
+    name: South Alabama Jaguars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GASO
+    name: Georgia Southern Eagles
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: APP
+    name: Appalachian State Mountaineers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ODU
+    name: Old Dominion Monarchs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TROY
+    name: Troy Trojans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: JMU
+    name: James Madison Dukes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ULL
+    name: Louisiana Ragin' Cajuns
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: MRSH
+    name: Marshall Thundering Herd
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USM
+    name: Southern Miss Golden Eagles
+  ### West Coast Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PEPP
+    name: Pepperdine Waves
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: USD
+    name: San Diego Toreros
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PORT
+    name: Portland Pilots
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SF
+    name: San Francisco Dons
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: BYU
+    name: BYU Cougars
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: PAC
+    name: Pacific Tigers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: LMU
+    name: Loyola Marymount Lions
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SCU
+    name: Santa Clara Broncos
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GONZ
+    name: Gonzaga Bulldogs
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SMC
+    name: Saint Mary's Gaels
+  ### Western Athletic Conference ###
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: NMSU
+    name: New Mexico State Aggies
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTU
+    name: Utah Tech Trailblazers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTRGV
+    name: UT Rio Grande Valley Vaqueros
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UTA
+    name: UT Arlington Mavericks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: ACU
+    name: Abilene Christian Wildcats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: CBU
+    name: California Baptist Lancers
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: TAR
+    name: Tarleton State Texans
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: GCU
+    name: Grand Canyon Lopes
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SEA
+    name: Seattle U Redhawks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SFA
+    name: Stephen F. Austin Lumberjacks
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SUU
+    name: Southern Utah Thunderbirds
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: SHSU
+    name: Sam Houston Bearkats
+  - platform: teamtracker
+    league_id: NCAAM
+    team_id: UVU
+    name: Utah Valley Wolverines
+
+### NCAAM Divisions ###
+template:
+  - sensor:
+    - name: NCAAM ASUN Conference
+      unique_id: sensor.ncaam_asun_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[0]['standings']['entries'] }}"
+    - name: NCAAM America East Conference
+      unique_id: sensor.ncaam_america_east_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[1]['standings']['entries'] }}"
+    - name: NCAAM American Athletic Conference
+      unique_id: sensor.ncaam_american_athletic_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[2]['standings']['entries'] }}"
+    - name: NCAAM Atlantic 10 Conference
+      unique_id: sensor.ncaam_atlantic_10_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[3]['standings']['entries'] }}"
+    - name: NCAAM Atlantic Coast Conference
+      unique_id: sensor.ncaam_atlantic_coast_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[4]['standings']['entries'] }}"
+    - name: NCAAM Big 12 Conference
+      unique_id: sensor.ncaam_big_12_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[5]['standings']['entries'] }}"
+    - name: NCAAM Big East Conference
+      unique_id: sensor.ncaam_big_east_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[6]['standings']['entries'] }}"
+    - name: NCAAM Big Sky Conference
+      unique_id: sensor.ncaam_big_sky_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[7]['standings']['entries'] }}"
+    - name: NCAAM Big South Conference
+      unique_id: sensor.ncaam_big_south_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[8]['standings']['entries'] }}"
+    - name: NCAAM Big Ten Conference
+      unique_id: sensor.ncaam_big_10_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[9]['standings']['entries'] }}"
+    - name: NCAAM Big West Conference
+      unique_id: sensor.ncaam_big_west_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[9]['standings']['entries'] }}"
+    - name: NCAAM Coastal Athletic Association
+      unique_id: sensor.ncaam_coastal_athletic_association
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[10]['standings']['entries'] }}"
+    - name: NCAAM Conference USA
+      unique_id: sensor.ncaam_conference_usa
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[11]['standings']['entries'] }}"
+    - name: NCAAM Division I Independents Conference
+      unique_id: sensor.ncaam_division_i_independents_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[12]['standings']['entries'] }}"
+    - name: NCAAM Horizon League
+      unique_id: sensor.ncaam_horizon_league
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[13]['standings']['entries'] }}"
+    - name: NCAAM Ivy League
+      unique_id: sensor.ncaam_ivy_league
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[14]['standings']['entries'] }}"
+    - name: NCAAM Metro Atlantic Athletic Conference
+      unique_id: sensor.ncaam_metro_atlantic_athletic_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[14]['standings']['entries'] }}"
+    - name: NCAAM Mid-American Conference
+      unique_id: sensor.ncaam_mid_american_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[15]['standings']['entries'] }}"
+    - name: NCAAM Mid-Eastern Athletic Conference
+      unique_id: sensor.ncaam_mid_eastern_athletic_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[16]['standings']['entries'] }}"
+    - name: NCAAM Missouri Valley Conference
+      unique_id: sensor.ncaam_missouri_valley_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[17]['standings']['entries'] }}"
+    - name: NCAAM Mountain West Conference
+      unique_id: sensor.ncaam_moutain_west_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[18]['standings']['entries'] }}"
+    - name: NCAAM Northeast Conference
+      unique_id: sensor.ncaam_northeast_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[19]['standings']['entries'] }}"
+    - name: NCAAM Ohio Valley Conference
+      unique_id: sensor.ncaam_ohio_valley_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[20]['standings']['entries'] }}"
+    - name: NCAAM Pac-12 Conference
+      unique_id: sensor.ncaam_pac_12_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[21]['standings']['entries'] }}"
+    - name: NCAAM Patriot League
+      unique_id: sensor.ncaam_patriot_league
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[22]['standings']['entries'] }}"
+    - name: NCAAM Southeastern Conference
+      unique_id: sensor.ncaam_southeastern_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[23]['standings']['entries'] }}"
+    - name: NCAAM Southern Conference
+      unique_id: sensor.ncaam_southern_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[24]['standings']['entries'] }}"
+    - name: NCAAM Southland Conference
+      unique_id: sensor.ncaam_southland_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[25]['standings']['entries'] }}"
+    - name: NCAAM Southwestern Athletic Conference
+      unique_id: sensor.ncaam_southwestern_athletic_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[26]['standings']['entries'] }}"
+    - name: NCAAM Summit League
+      unique_id: sensor.ncaam_summit_league
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[27]['standings']['entries'] }}"
+    - name: NCAAM Sun Belt Conference
+      unique_id: sensor.ncaam_sun_belt_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[28]['standings']['entries'] }}"
+    - name: NCAAM West Coast Conference
+      unique_id: sensor.ncaam_west_coast_conference
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.ncaam_standings','children')[29]['standings']['entries'] }}"

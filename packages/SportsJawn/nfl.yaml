@@ -1,0 +1,185 @@
+## NFL Standings ##
+rest:
+  - resource: https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?seasontype=2&type=0&level=3
+    scan_interval: 36000
+    sensor:
+      name: NFL Standings
+      unique_id: sensor.nfl_standings
+      value_template: "{{ now() }}"
+      json_attributes:
+        - children
+
+## NFL Teams ##
+sensor:
+  - platform: teamtracker
+    league_id: NFL
+    team_id: DET
+    name: Detroit Lions
+  - platform: teamtracker
+    league_id: NFL
+    team_id: GB
+    name: Green Bay
+  - platform: teamtracker
+    league_id: NFL
+    team_id: CHI
+    name: Chicago Bears
+  - platform: teamtracker
+    league_id: NFL
+    team_id: MIN
+    name: Minnesota Vikings
+  - platform: teamtracker
+    league_id: NFL
+    team_id: BUF
+    name: Buffalo Bills
+  - platform: teamtracker
+    league_id: NFL
+    team_id: MIA
+    name: Miami Dolphins
+  - platform: teamtracker
+    league_id: NFL
+    team_id: NE
+    name: New England Patriots
+  - platform: teamtracker
+    league_id: NFL
+    team_id: NYJ
+    name: New York Jets
+  - platform: teamtracker
+    league_id: NFL
+    team_id: DAL
+    name: Dallas Cowboys
+  - platform: teamtracker
+    league_id: NFL
+    team_id: NYG
+    name: New York Giants
+  - platform: teamtracker
+    league_id: NFL
+    team_id: PHI
+    name: Philadelphia Eagles
+  - platform: teamtracker
+    league_id: NFL
+    team_id: WSH
+    name: Washington Commanders
+  - platform: teamtracker
+    league_id: NFL
+    team_id: BAL
+    name: Baltimore Ravens
+  - platform: teamtracker
+    league_id: NFL
+    team_id: CIN
+    name: Cincinnati Bengals
+  - platform: teamtracker
+    league_id: NFL
+    team_id: CLE
+    name: Cleveland Browns
+  - platform: teamtracker
+    league_id: NFL
+    team_id: PIT
+    name: Pittsburg Steelers
+  - platform: teamtracker
+    league_id: NFL
+    team_id: HOU
+    name: Houston Texans
+  - platform: teamtracker
+    league_id: NFL
+    team_id: IND
+    name: Indianapolis Colts
+  - platform: teamtracker
+    league_id: NFL
+    team_id: JAX
+    name: Jacksonville Jaguars
+  - platform: teamtracker
+    league_id: NFL
+    team_id: TEN
+    name: Tennessee Titans
+  - platform: teamtracker
+    league_id: NFL
+    team_id: ATL
+    name: Atlanta Falcons
+  - platform: teamtracker
+    league_id: NFL
+    team_id: CAR
+    name: Carolina Panthers
+  - platform: teamtracker
+    league_id: NFL
+    team_id: "NO"
+    name: New Orleans Saints
+  - platform: teamtracker
+    league_id: NFL
+    team_id: TB
+    name: Tampa Bay Buccaneers
+  - platform: teamtracker
+    league_id: NFL
+    team_id: DEN
+    name: Denver Broncos
+  - platform: teamtracker
+    league_id: NFL
+    team_id: KC
+    name: Kansas City Chiefs
+  - platform: teamtracker
+    league_id: NFL
+    team_id: LV
+    name: Las Vegas Raiders
+  - platform: teamtracker
+    league_id: NFL
+    team_id: LAC
+    name: Los Angeles Chargers
+  - platform: teamtracker
+    league_id: NFL
+    team_id: ARI
+    name: Arizona Cardinals
+  - platform: teamtracker
+    league_id: NFL
+    team_id: LAR
+    name: Los Angeles Rams
+  - platform: teamtracker
+    league_id: NFL
+    team_id: SF
+    name: "San Francisco 49ers"
+  - platform: teamtracker
+    league_id: NFL
+    team_id: SE
+    name: Seattle Seahawks
+
+### NFL Divisions ###
+template:
+  - sensor:
+    - name: NFL AFC East
+      unique_id: sensor.nfl_afc_east
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][0]['standings']['entries'] }}"
+    - name: NFL AFC North
+      unique_id: sensor.nfl_afc_north
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][1]['standings']['entries'] }}"
+    - name: NFL AFC South
+      unique_id: sensor.nfl_afc_south
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][2]['standings']['entries'] }}"
+    - name: NFL AFC West
+      unique_id: sensor.nfl_afc_west
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[0]['children'][3]['standings']['entries'] }}"
+    - name: NFL NFC East
+      unique_id: sensor.nfl_nfc_east
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][0]['standings']['entries'] }}"
+    - name: NFL NFC North
+      unique_id: sensor.nfl_nfc_north
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][1]['standings']['entries'] }}"
+    - name: NFL NFC South
+      unique_id: sensor.nfl_nfc_south
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][2]['standings']['entries'] }}"
+    - name: NFL NFC West
+      unique_id: sensor.nfl_nfc_west
+      state: "{{ now() }}"
+      attributes:
+        entries: "{{ state_attr('sensor.nfl_standings','children')[1]['children'][3]['standings']['entries'] }}"
