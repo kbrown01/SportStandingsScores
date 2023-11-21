@@ -32,9 +32,7 @@ decluttering_templates:
         - hidden: true
           data: '[[attribute]]'
           modify: '[[sort]]'
-        - name: >-
-            <div title="Clinch Indicator:&#10; * : Presidents Trophy&#10; x :
-            Playoff Berth&#10; - : In The Hunt&#10; e : Eliminated">C</div>
+        - name: <div>C</div>
           data: '[[attribute]]'
           modify: >-
             if(typeof x.stats.find(y=>y.abbreviation == 'CLINCH') !==
@@ -47,52 +45,52 @@ decluttering_templates:
             src="' + x.team.logos[0].href + '" style="height:
             20px;vertical-align:middle;"></a>&nbsp;' + x.team.displayName +
             '</div>'
-        - name: <div title="Games Played">GP</div>
+        - name: <div>GP</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GP').displayValue
-        - name: <div title="Wins">W</div>
+        - name: <div>W</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'W').displayValue
-        - name: <div title="Losses">L</div>
+        - name: <div>L</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L').displayValue
-        - name: <div title="Overtime/Shootout Losses">OTL</div>
+        - name: <div>OTL</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'OTL').displayValue
-        - name: <div title="Points">PTS</div>
+        - name: <div>PTS</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'PTS').displayValue
-        - name: <div title="Regulation Wins">RW</div>
+        - name: <div>RW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'RW').displayValue
-        - name: <div title="Regulation and Overtime Wins">ROW</div>
+        - name: <div>ROW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'ROW').displayValue
-        - name: <div title="Shootout Wins">SOW</div>
+        - name: <div>SOW</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOW').displayValue
-        - name: <div title="Shootout Losses">SOL</div>
+        - name: <div>SOL</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'SOL').displayValue
-        - name: <div title="Home Record">HOME</div>
+        - name: <div>HOME</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'HOME').displayValue
-        - name: <div title="Away Record">AWAY</div>
+        - name: <div>AWAY</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'AWAY').displayValue
-        - name: <div title="Goals For">GF</div>
+        - name: <div>GF</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GF').displayValue
-        - name: <div title="Goals Against">GA</div>
+        - name: <div>GA</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'GA').displayValue
-        - name: <div title="Game Average Goal Differential">DIFF</div>
+        - name: <div>DIFF</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'DIFF').displayValue
-        - name: <div title="Last 10 Games">L10</div>
+        - name: <div>L10</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'L10').summary
-        - name: <div title="Current Streak">STRK</div>
+        - name: <div>STRK</div>
           data: '[[attribute]]'
           modify: x.stats.find(y=>y.abbreviation == 'STRK').displayValue
   mlb_settings:
@@ -181,8 +179,8 @@ decluttering_templates:
       css:
         table+: 'padding: 0px; width: 1600px;'
         tbody tr td:first-child: 'width: 2%;'
-        tbody tr td:nth-child(2): 'width: 20%;'
-        tbody tr td:nth-child(n+3): 'width: 6%;'
+        tbody tr td:nth-child(2): 'width: 15%;'
+        tbody tr td:nth-child(n+3): 'width: 4%;'
         tbody tr:hover: 'background-color: green!important; color:white!important;'
         tbody tr td:nth-child(7): 'background-color: green; color: white;'
       card_mod:
@@ -226,7 +224,7 @@ decluttering_templates:
             x.stats.find(y=>y.abbreviation == 'T').value
         - name: W
           data: entries
-          modify: x.stats.find(y=>y.abbreviation == 'W').value
+          modify: x.stats.find(y=>y["abbreviation"] == 'W').value
         - name: L
           data: entries
           modify: x.stats.find(y=>y.abbreviation == 'L').value
@@ -490,6 +488,10 @@ views:
                                       - sort: >-
                                           x.stats.find(y=>y.shortDisplayName ==
                                           'PTS').value
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
@@ -499,6 +501,10 @@ views:
                                       - sort: >-
                                           x.stats.find(y=>y.shortDisplayName ==
                                           'PTS').value
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
                                   - type: custom:decluttering-card
                                     template: nhl_settings
                                     variables:
@@ -512,6 +518,10 @@ views:
                                       - sort: >-
                                           x.stats.find(y=>y.shortDisplayName ==
                                           'PTS').value
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
                             - attributes:
                                 label: Conference
                               card:
@@ -540,6 +550,10 @@ views:
                                       - sort: >-
                                           x.stats.find(y=>y.shortDisplayName ==
                                           'PTS').value
+                                      - excluded_entities:
+                                          - sensor.nhl_starting_goalies
+                                          - sensor.nhl_wildcard
+                                          - sensor.nhl_wildcard_standings
                             - attributes:
                                 label: Overall
                               card:
