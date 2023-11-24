@@ -184,7 +184,7 @@
   name: "San Francisco 49ers"
 - platform: teamtracker
   league_id: NFL
-  team_id: SE
+  team_id: SEA
   name: Seattle Seahawks
 ##
 ##  NHL Teams
